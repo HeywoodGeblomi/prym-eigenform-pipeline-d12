@@ -1,0 +1,17 @@
+{
+  "discriminant": 12,
+  "parameters": {"w": 1, "h": 1, "e": 2},
+  "lambda": "1 + sqrt(3)",
+  "lambda_numeric": 2.732050807568877,
+  "stratum": "H(2,2)^odd (Prym component)",
+  "basis_H1_minus": ["a0", "b0", "a1", "b1"],
+  "period_vector_real": [2.732050807568877, 0.0, 1.0, 0.0],
+  "T_matrix": [
+    [2, 0, 2, 0],
+    [0, 2, 0, 2],
+    [1, 0, 0, 0],
+    [0, 1, 0, 0]
+  ],
+  "minimal_polynomial": "T^2 - 2T - 2I = 0",
+  "notes": "Standard three-torus / S-shaped prototype (McMullen–Lanneau–Nguyen). Absolute periods on anti-invariant homology."
+}

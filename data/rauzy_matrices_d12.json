@@ -1,0 +1,17 @@
+{
+  "description": "Prym-compatible unimodular generators for the S-shaped prototype D=12. Minimal generating set that preserves the involution symmetry; NOT the exhaustive Rauzy class of the full zippered-rectangle presentation.",
+  "A_top": [
+    [1, 0, 1, 0],
+    [0, 1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1]
+  ],
+  "A_bot": [
+    [1, 0, 0, 0],
+    [0, 1, 0, 1],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1]
+  ],
+  "det": [1, 1],
+  "KZ_action": "(A^{-1})^T"
+}

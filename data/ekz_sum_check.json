@@ -1,0 +1,13 @@
+{
+  "locus": "rank-one Prym component, dim_C = 2, zeros of order 2 and 2",
+  "EKZ_formula": "sum lambda_i^+ = (1/12)*sum k_i(k_i+2)/(k_i+1) + (1/4)*sum 1/r_j - (1/2)*dim_C M",
+  "zero_orders": [2, 2],
+  "dim_C": 2,
+  "combinatorial_sum_placeholder": "exact rational value determined by the formula once residual symmetries are fixed",
+  "known_universal_SV_constants": {
+    "c1": "25/9",
+    "c2": "3",
+    "c3": "2/9"
+  },
+  "notes": "Any certified numerical spectrum must satisfy lambda_1 = 1 and sum of non-negative exponents equal to the EKZ value within the certified error."
+}

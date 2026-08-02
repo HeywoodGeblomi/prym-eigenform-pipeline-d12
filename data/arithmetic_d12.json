@@ -1,0 +1,10 @@
+{
+  "discriminant": 12,
+  "hilbert_modular_surface_type": "rational",
+  "euler_characteristic_chi": -0.6666666666666666,
+  "chi_fraction": "-2/3",
+  "product_locus_chi": 1.6666666666666667,
+  "product_locus_relation": "chi(P_D) = -5/2 * chi(X_D)",
+  "boundary_self_intersections_typical": [-2, -2],
+  "notes": "Published values used for Siegel-Veech ratios. Intersection matrix of resolved cusps is the circulant tridiagonal matrix with these self-intersections."
+}
