@@ -1,0 +1,9 @@
+{
+  "description": "Provisional spectrum of the LINEAR MODEL only (not a genuine Prym eigenform). 10^6 steps, QR reorthogonalization every 10^4.",
+  "n_steps": 1000000,
+  "reorth_every": 10000,
+  "lyap": [1.3815510558208594e-05, 0.0, 0.0, -1.3815510558208594e-05],
+  "symmetry_residuals": [1.3261656041981679e-16, 0.0],
+  "max_abs_lyap": 1.3815510558208594e-05,
+  "note": "Near-zero spectrum is the expected behaviour of the constrained linear model; it does NOT approximate the Lyapunov spectrum of ΩE_12."
+}
