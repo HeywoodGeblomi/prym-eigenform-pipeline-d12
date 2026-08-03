@@ -1,0 +1,11 @@
+{
+  "description": "Avila-Viana numerical pinching/twisting probes on the linear-model generators (projected to RM eigenplane)",
+  "pinching_score_projected": {
+    "n_trials": 80,
+    "n_pinching": 80,
+    "fraction_pinching": 1.0,
+    "max_gap_seen": "Infinity"
+  },
+  "twisting_fraction_20step": 1.0,
+  "note": "Elementary matrices are near-unipotent after projection; gaps appear in products. A genuine Prym-compatible class is expected to produce clearer pinching elements consistent with Forni positivity of the second exponent."
+}
