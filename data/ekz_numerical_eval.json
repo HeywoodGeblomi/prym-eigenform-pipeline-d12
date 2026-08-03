@@ -1,0 +1,10 @@
+{
+  "locus": "rank-one Prym, dim_C=2, zeros orders 2,2",
+  "zero_orders": [2, 2],
+  "dim_C": 2,
+  "combinatorial_zero_term": 0.4444444444444444,
+  "dim_term": -1.0,
+  "bare_sum_without_residual_symmetries": -0.5555555555555556,
+  "note": "Full EKZ value also includes (1/4) sum 1/r_j over residual symmetries of the locus; for the S-shaped D=12 this must be taken from the published SV constants or computed from the cylinder data. Provisional linear-model spectra are near zero and cannot be compared.",
+  "known_SV_from_data": {"c1": "25/9", "c2": "3", "c3": "2/9"}
+}
