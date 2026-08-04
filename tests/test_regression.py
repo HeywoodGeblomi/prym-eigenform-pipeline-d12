@@ -4,8 +4,9 @@ Regression tests for the D=12 Prym prototype.
 1. Exact residual of the minimal polynomial of T must be 0.
 2. Prototype period vector must be an eigenvector.
 3. P_lam must be a projector (idempotent) of rank 2.
-4. A short integrator run must keep RM residual near machine zero
-   and produce a symmetric spectrum.
+4. Corrected generators strictly preserve the eigenplane.
+5. A short integrator run (raw unimodular generators + continuous
+   eigenplane re-projection) produces a spectrum symmetric about zero.
 """
 import sys
 from pathlib import Path
@@ -22,6 +23,8 @@ from code.rm_projector import (
     is_eigenvector,
     lam,
 )
+from code.rauzy import A_top_corr, A_bot_corr, S_corr
+from code.verify import preserves_eigenplane
 from code.integrator import run
 
 
@@ -40,10 +43,23 @@ def test_projector():
     assert np.linalg.norm(P_lam @ P_lam - P_lam) < 1e-12
 
 
-def test_short_run_stays_on_eigenplane():
+def test_corrected_generators_preserve_eigenplane():
+    for name, M in [
+        ("A_top_corr", A_top_corr),
+        ("A_bot_corr", A_bot_corr),
+        ("S_corr", S_corr),
+    ]:
+        ok, residual = preserves_eigenplane(M)
+        assert ok, f"{name} residual {residual}"
+
+
+def test_short_run_symmetric_spectrum():
+    """Raw generators + continuous projection -> approximate +/- symmetry."""
     snaps = run(n_steps=5000, reorth_every=500)
     lyap = np.array(snaps[-1]["lyap"])
-    assert abs(lyap[0] + lyap[-1]) < 1e-6 * max(1.0, abs(lyap[0]))
+    assert abs(lyap[0] + lyap[-1]) < 1e-6 * max(1.0, abs(lyap[0])), (
+        f"spectrum not symmetric: {lyap}"
+    )
 
 
 if __name__ == "__main__":
@@ -53,6 +69,8 @@ if __name__ == "__main__":
     print("PASS: eigenvector")
     test_projector()
     print("PASS: projector")
-    test_short_run_stays_on_eigenplane()
-    print("PASS: short run on eigenplane")
+    test_corrected_generators_preserve_eigenplane()
+    print("PASS: corrected generators preserve eigenplane")
+    test_short_run_symmetric_spectrum()
+    print("PASS: short run symmetric spectrum")
     print("All regression tests passed.")
