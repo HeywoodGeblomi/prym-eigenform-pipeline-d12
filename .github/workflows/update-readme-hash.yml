@@ -1,4 +1,4 @@
-# Optional: keep README commit pin in sync on pushes to main.
+# Keep README commit pin in sync on pushes to main.
 name: Update README commit hash
 
 on:
@@ -12,7 +12,6 @@ permissions:
 jobs:
   pin-hash:
     runs-on: ubuntu-latest
-    # Avoid infinite loops: skip if the tip commit is already a hash-pin commit
     if: github.event.head_commit.message != 'chore: pin README commit hash'
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +20,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update README hash pin
+        env:
+          LOG_FORMAT: json
+          DEBUG: "1"
         run: |
           chmod +x scripts/update_readme_hash.sh
           ./scripts/update_readme_hash.sh
