@@ -1,9 +1,31 @@
 {
-  "status": "FROZEN",
-  "statement": "Across 172 arithmetic surfaces in H_3(4) with nsq = 5…30, the spectral window of Gate 1 is occupied exclusively by the Σ = 8/5 class. No surface from any other class enters that window.",
-  "total": 172,
-  "class_8_5": 83,
-  "class_9_5": 89,
+  "track": "C",
+  "status": "COMPUTATIONALLY_COMPLETE",
+  "locked_statement": "Across 172 arithmetic surfaces in H₃(4) with nsq = 5…30, the spectral window of Gate 1 is occupied exclusively by the Σ = 8/5 class. No surface from any other class enters that window.",
+  "total_surfaces": 172,
+  "nsq_range": [5, 30],
+  "classes": {
+    "8/5": {
+      "count": 83,
+      "lambda2": [0.3940671684025363, 0.4344248045853122],
+      "lambda3": [0.16355028731413015, 0.20456109420795834]
+    },
+    "9/5": {
+      "count": 89,
+      "lambda2": [0.6003, 0.6211],
+      "lambda3": [0.1790, 0.2004]
+    }
+  },
+  "gate1_window": {
+    "lambda2": [0.40, 0.43],
+    "lambda3": [0.17, 0.20]
+  },
   "intruders": 0,
-  "level": "computational evidence — not a formal proof"
+  "level": "computational_evidence_not_formal_proof",
+  "project_status": {
+    "Gate1": "PASS",
+    "TrackA": "FROZEN",
+    "TrackB": "CLOSED",
+    "TrackC": "COMPUTATIONALLY_COMPLETE"
+  }
 }

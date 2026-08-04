@@ -1,14 +1,18 @@
 {
+  "track": "A",
   "status": "FROZEN",
-  "exact": {"lambda1": 1, "lambda2_plus_lambda3": "3/5", "sum": "8/5"},
-  "converged": {
-    "means": [1.000635, 0.418125, 0.181826],
-    "interval_3sigma": {
-      "lambda2": [0.4029, 0.4333],
-      "lambda3": [0.1671, 0.1965]
-    },
-    "n_exp": 30,
-    "n_iter": 500000
+  "exact": {
+    "lambda1": 1,
+    "lambda2_plus_lambda3": "3/5",
+    "sum_positive": "8/5"
   },
-  "residual0_edges": 222
+  "empirical_3sigma": {
+    "lambda2": [0.403, 0.433],
+    "lambda3": [0.167, 0.197],
+    "means": {"lambda2": 0.418, "lambda3": 0.182},
+    "n_experiments": 30,
+    "n_iterations": 500000
+  },
+  "residual0_edges": "222/268",
+  "level": "exact_sum_theorem_level; intervals_empirical_not_IA"
 }
