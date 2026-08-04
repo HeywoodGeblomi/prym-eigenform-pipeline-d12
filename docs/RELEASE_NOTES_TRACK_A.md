@@ -1,18 +1,5 @@
-# Track A — KZ Spectrum Bounds (D=12 Gate 1)
+# Track A Release — FROZEN
 
-## Exact (theorem-level)
-
-| Identity | Value |
-|----------|--------|
-| λ₁ | 1 |
-| λ₂ + λ₃ | 3/5 |
-| Σ positive | 8/5 |
-
-## Empirical 3σ enclosures (NOT IA-certified)
-
-| Exponent | Interval | Mean |
-|----------|----------|------|
-| λ₂ | [0.403, 0.446] | 0.419 |
-| λ₃ | [0.161, 0.209] | 0.182 |
-
-Exact sum is theorem-level. Individual intervals are hard numerical, not IA-certified.
+Exact (theorem-level): λ1=1, λ2+λ3=3/5, Σ=8/5.
+Empirical 3σ (not IA-certified): λ2∈[0.403,0.433] mean 0.418; λ3∈[0.167,0.197] mean 0.182.
+30×500k native KZ; numerical sum confirms 3/5.
