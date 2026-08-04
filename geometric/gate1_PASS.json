@@ -1,0 +1,18 @@
+{
+  "gate1_ready": true,
+  "gate1_result": "PASS",
+  "CylinderDiagram": "(0,2)-(4) (1,4)-(2,3) (3)-(0,1)",
+  "stratum": "H_3(4)",
+  "genus": 3,
+  "lengths_exact": ["\\u03bb", "1-\\u03bb", "1-\\u03bb", "\\u03bb", "\\u03bb"],
+  "widths": [1, 1, "\\u03bb"],
+  "lambda_exact": "-1+sqrt(3)",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2, "D": 12},
+  "origami_same_combinatorics": "(1,2)(3,4,5)(6,7)\n(1,4,6)(2,5,7,3)",
+  "origami_stratum": "H_3(4)",
+  "sum_lyapunov_origami": "8/5",
+  "residual_LN_period": 0.0,
+  "projector_called": false,
+  "source": "surface_dynamics AbelianStratum(4).cylinder_diagrams(3) + LN classification",
+  "identification": "LN unique D=12 prototype (1,1,0,-2); Model A+ widths (1,1,\\u03bb) + residual-0 = S(1,\\u00b12) up to SL(2,R)"
+}
