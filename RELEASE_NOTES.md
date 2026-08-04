@@ -1,66 +1,30 @@
-# Release Notes — v0.2.0-candidate
+# prym-eigenform-pipeline-d12 — Release Notes
 
-**Date:** 2026-08-04  
-**Status:** Research blueprint with candidate combinatorial Rauzy data  
-**(not a certified spectrum package)**
+## Status: Gate 1 PASS + Track A FROZEN
 
-**Contributor:** [Heywood Geblomi](https://github.com/HeywoodGeblomi)
+Date: 2026-08-04
 
-**Repository:** https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12
+### Gate 1 — PASS
+- Diagram: `(0,2)-(4) (1,4)-(2,3) (3)-(0,1)`
+- Stratum: H₃(4)^odd
+- Lengths: `[λ, 1−λ, 1−λ, λ, λ]`, λ=−1+√3
+- Widths: (1, 1, λ)
+- Prototype: (w,h,t,e)=(1,1,0,−2), D=12
+- Residual-0: 0
+- ID: LN unique D=12 prototype = S(1,±2) up to SL(2,ℝ)
 
-## What this release contains
+### Track B cusps — CLOSED
+4 Model A± diagrams in H₃(4). Rauzy class 134; residual-0 edges 222/268.
 
-- Exact real-multiplication endomorphism \(T\) with residual **0** (double and 50-digit precision).
-- Rank-2 projector \(P_\lambda\) onto the \(\lambda=1+\sqrt{3}\) eigenplane (idempotent).
-- Corrected generators `A_top_corr`, `A_bot_corr`, `S_corr` (eigenplane residual \(\sim10^{-16}\)).
-- Raw unimodular generators for the constrained integrator (eigenplane enforced by continuous re-projection).
-- Candidate combinatorial Rauzy class: **3 permutations, 6 edges**.
-- Residual-0-filtered 4-D monoid: **65 matrices**.
-- `benchmarks.md` with residual and class-size numbers.
-- Regression suite: **5/5 tests**.
-- Hash-pin automation (`scripts/update_readme_hash.sh`) with structured logging.
+### Track A — FROZEN
+**Exact (theorem-level):** λ₁=1, λ₂+λ₃=3/5, Σ=8/5
 
-## What this release does not contain
+**Empirical 3σ (not IA-certified):**
+- λ₂ = 0.418 ∈ [0.403, 0.433]
+- λ₃ = 0.182 ∈ [0.167, 0.197]
 
-- Certified geometric Rauzy class of the published S-shaped surface.
-- Certified Lyapunov spectra of a genuine Prym eigenform.
-- Interval-arithmetic long runs or a completed EKZ sum check on a genuine spectrum.
-- Any new theorem.
+### Not claimed
+IA-certified individual bounds; full suspension embedding; Track C (discriminant independence).
 
-Provisional numerical exponents must **not** be cited as Lyapunov exponents of a surface in \(\Omega E_{12}\).
-
-## Stage-4 status
-
-| Step | Status |
-|------|--------|
-| 1. Polygonal model + side identifications + \(\rho\) | Advanced (geometric derivation) |
-| 2. Horizontal transversal | Done |
-| 3. Initial generalized permutation + lengths | Candidate written down |
-| 4. Rauzy induction under residual-0 filter | Executed on the **candidate** |
-| 5. Enumerate + algebraic filter | Candidate: 3 perms / 6 edges; monoid size 65 |
-| 6. Publish permutations + matrices | `data/candidate_rauzy_class_d12.json` |
-
-The combinatorial data is a geometrically derived **candidate**, not a certified extraction from the published S-shaped surface.
-
-## Citation policy
-
-- You **may** cite residual-0 algebraic claims and corrected-generator residuals.
-- You **must not** cite provisional spectra or the candidate class as certified geometric results.
-
-Suggested form:
-
-> Exact real-multiplication projector, plane-preserving generator corrections, and geometrically derived candidate Rauzy data for the discriminant-12 S-shaped prototype (residual 0). Heywood Geblomi. https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12
-
-## License
-
-MIT. See `LICENSE`.
-
-## Changelog since v0.1.0
-
-- Plane-preserving corrected generators.
-- Candidate edge pairings and generalized permutation from geometry.
-- Rauzy induction on the candidate; published class + monoid.
-- `benchmarks.md`.
-- Integrator default: raw unimodular generators + continuous projection.
-- Regression suite expanded to 5 tests (all passing).
-- README hash-pin script + structured logging + optional GitHub Action.
+### Next science
+Track C: discriminant independence of non-tautological exponents on 2D Prym components.
