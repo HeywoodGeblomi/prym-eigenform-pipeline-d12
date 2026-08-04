@@ -2,13 +2,13 @@
 
 **Result: OPEN (near-pass)**
 
-## Valid diagrams
+## Achieved
 
-1. `(0,2)-(0,3) (1,3)-(1,4) (4)-(2)` lengths `[1-λ, 1-λ, λ, λ, λ]`
-2. `(0,2)-(4) (1,4)-(2,3) (3)-(0,1)` lengths `[λ, 1-λ, 1-λ, λ, λ]`
+- Independent Model A+ diagram `(0,2)-(4) (1,4)-(2,3) (3)-(0,1)` in H_3(4)
+- Algebraic lengths `[\\u03bb, 1-\\u03bb, 1-\\u03bb, \\u03bb, \\u03bb]` with cylinder constraints
+- Residual-0 on LN period (no projector)
+- Origami `(1,2)(3,4,5)(6,7)/(1,4,6)(2,5,7,3)` in H_3(4), sum Lyapunov 8/5
 
-Both: stratum H_3(4), simple width λ, long widths 1, bot/top match True.
+## Gap
 
-Residual-0 on LN period: 0 (no projector).
-
-Still missing: full algebraic-length holonomy (ribbon API integer-only).
+Integer origami moduli ≠ algebraic LN moduli (same combinatorics). Exact geometric S(1,\\u00b12) identification still required for PASS.

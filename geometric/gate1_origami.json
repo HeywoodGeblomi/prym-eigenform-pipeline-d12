@@ -1,0 +1,17 @@
+{
+  "CylinderDiagram": "(0,2)-(4) (1,4)-(2,3) (3)-(0,1)",
+  "stratum": "H_3(4)",
+  "genus": 3,
+  "origami": "(1,2)(3,4,5)(6,7)\n(1,4,6)(2,5,7,3)",
+  "origami_stratum": "H_3(4)",
+  "sum_lyapunov": 1.6,
+  "sum_lyapunov_exact": "8/5",
+  "integer_lengths": [1, 1, 1, 2, 2],
+  "algebraic_lengths_exact": ["\\u03bb", "1-\\u03bb", "1-\\u03bb", "\\u03bb", "\\u03bb"],
+  "lambda_exact": "-1+sqrt(3)",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2, "D": 12},
+  "residual_LN_period": 0.0,
+  "projector_called": false,
+  "gate1_ready": false,
+  "gate1_status": "NEAR-PASS: origami H_3(4) realizes Diagram B; algebraic lengths + residual-0; exact S(1,\\u00b12) moduli match still open"
+}
