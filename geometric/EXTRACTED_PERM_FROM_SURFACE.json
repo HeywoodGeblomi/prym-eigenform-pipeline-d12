@@ -1,0 +1,18 @@
+{
+  "method": "pure-Python TranslationSurface + horizontal transversal",
+  "projector_called": false,
+  "ordered_vertical_edges_crossed": ["P0.L", "P0.R", "P1.L", "P1.R", "P2.L", "P2.R"],
+  "intervals": [
+    {"id": 0, "length": 1.0, "edges": "P0.L → P0.R"},
+    {"id": 1, "length": 0.7320508075688772, "edges": "P1.L → P1.R"},
+    {"id": 2, "length": 1.0, "edges": "P2.L → P2.R"}
+  ],
+  "generalized_permutation_extracted": {
+    "top": [0, 1, 2],
+    "bot": [0, 1, 2],
+    "note": "Identity return — expected for pure horizontal cylinder gluings"
+  },
+  "residual_T_Ap_without_projector": 3.33e-16,
+  "gate1": "OPEN",
+  "reason": "Identity return on horizontal cylinders. Non-trivial Rauzy perm needs S-offset subdivision or flatsurf."
+}
