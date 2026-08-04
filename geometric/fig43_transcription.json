@@ -1,0 +1,13 @@
+{
+  "source": "arXiv:2210.13503 Fig. 4.3 (PDF page 15)",
+  "visible_dimension_labels": {
+    "left_vertical_stack": ["1", "lambda", "1"],
+    "bottom_horizontal": ["w - lambda", "lambda", "w - lambda"]
+  },
+  "edge_letter_labels": "NONE",
+  "applicability_to_w1_e2": {
+    "w_minus_lambda": "-sqrt(3) < 0",
+    "conclusion": "Fig 4.3 assumes lambda < w; cannot directly certify S(1,±2) edge sequence"
+  },
+  "gate1_decision": "FAIL"
+}

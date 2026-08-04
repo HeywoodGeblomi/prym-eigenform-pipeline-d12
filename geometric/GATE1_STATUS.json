@@ -1,0 +1,19 @@
+{
+  "gate": 1,
+  "result": "FAIL",
+  "date": "2026-08-04",
+  "attempts": [
+    {
+      "method": "Transcribe arXiv:2210.13503 Fig 4.3",
+      "outcome": "FAIL",
+      "reason": "No edge letter labels; dimension scheme assumes lambda < w which fails for (1,±2)"
+    },
+    {
+      "method": "Build S(1,±2) in sage-flatsurf",
+      "outcome": "FAIL",
+      "reason": "sage-flatsurf / surface_dynamics not installed"
+    }
+  ],
+  "residual0_prototype_vector": "PASS",
+  "hypothesis_permutation_retained": {"top": [0, 1, 2], "bot": [2, 1, 0]}
+}
