@@ -1,0 +1,13 @@
+{
+  "status": "HYPOTHESIS — constraint-derived; not labelled-figure transcription",
+  "initial_permutation": {"top": [0, 1, 2], "bot": [2, 1, 0]},
+  "irreducible": true,
+  "labels": {
+    "0": "A~A' long-cylinder family",
+    "1": "B~B' long-cylinder family",
+    "2": "C short-cylinder family (scale lambda)"
+  },
+  "lengths_exact": ["1", "1", "1+sqrt(3)"],
+  "compatible_with_phase2_candidate": true,
+  "gate1_note": "Gate 1 ADVANCED but NOT CLOSED until labelled figure or flatsurf confirms ordered edge sequence."
+}

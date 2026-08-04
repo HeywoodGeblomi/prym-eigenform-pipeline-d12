@@ -1,40 +1,27 @@
-# Phase 1 — Geometric completion (INITIATED)
+# Phase 1 — Geometric completion
 
-**Goal:** Replace the linear-model / candidate combinatorial input by the geometric S(w=1,e=±2) surface of Lanneau–Nguyen, with side pairings and Prym involution ρ, then read off the initial generalized permutation.
+**Status:** **ADVANCED** (literature model + constraint-derived hypothesis)  
+**Gate 1:** **NOT CLOSED** — ordered edge sequence not confirmed by labelled figure or flatsurf  
+**Contributor:** Heywood Geblomi  
+**Date:** 2026-08-04
 
-## Known from the literature
+## Literature model
 
-- Prototype parameters: (w,h,t,e)=(1,1,0,±2).
-- Discriminant D=e²+8w=12 for the standard S-model in ΩE_D(4).
-- ΩE_12(4) is a single connected Teichmüller curve with exactly two cusps (Lanneau–Nguyen).
-- Complete periodicity results apply to Prym eigenforms in this family.
-- Model A± three-cylinder decompositions are the relevant combinatorial type.
+S(w,e): λ×λ square attached to two w×1 rectangles; λ=(e+√(e²+8w))/2.
+Parameters (w,h,t,e)=(1,1,0,±2) ⇒ D=12, λ=1+√3.
+Two long cylinders + one short simple cylinder. Prym ρ = 180° rotation about centre.
+ΩE_12(4): one Teichmüller curve, two cusps (Lanneau–Nguyen).
 
-## Required geometric data (BLOCKED until transcribed or constructed)
+## Files
 
-| Item | Status |
-|------|--------|
-| Edge-labelled polygonal model with translation pairings | **Missing** as machine-readable data |
-| Explicit action of ρ on edges / homology | **Missing** in open labelled form |
-| Ordered vertical edges crossed by a horizontal transversal | **Missing** (candidate only) |
-| Suspension heights / zippered-rectangle data | **Missing** |
+| File | Content |
+|------|---------|
+| prototype_parameters.json | Exact parameters, λ, cylinders |
+| side_pairings_hypothesis.json | Translation pairings + ρ |
+| initial_permutation_hypothesis.json | 3-letter start (0 1 2 / 2 1 0) |
 
-## Method (do not fabricate)
+## Gate 1
 
-1. Published high-resolution figure of S(1,±2) **or** construct in sage-flatsurf / surface_dynamics.
-2. Label edges; write pairing list; choose transversal compatible with three-cylinder decomposition.
-3. Read off generalized permutation and length vector.
-4. Test against residual-0 projector and Prym predicates in code/verify.py.
-5. **Gate 1:** accept only if exact residual-0 and Prym compatibility hold.
-
-## Relation to candidate data
-
-data/candidate_rauzy_class_d12.json is a geometrically *motivated hypothesis*, not Gate 1 output. Phase 2 must not treat it as the certified class.
-
-## Immediate checklist
-
-- [ ] Obtain labelled figure or flatsurf construction
-- [ ] Write geometric/side_pairings.json
-- [ ] Write geometric/initial_permutation.json
-- [ ] Run residual-0 + Prym tests in exact arithmetic
-- [ ] Record Gate 1 pass/fail in docs/EXECUTION_LOG.md
+Literature model and residual-0 on prototype vector: PASS.  
+Labelled edge sequence from figure/flatsurf: FAIL.  
+**Gate 1 NOT CLOSED.**

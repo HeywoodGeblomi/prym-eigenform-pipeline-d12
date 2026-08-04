@@ -1,0 +1,16 @@
+{
+  "status": "HYPOTHESIS — from three-cylinder + Prym geometry",
+  "layout": "left rectangle L (1x1) | center square Q (lambda x lambda) | right rectangle R (1x1)",
+  "translation_pairings_hypothesis": [
+    {"edge": "A", "paired_with": "A_prime", "by": "long cylinder L"},
+    {"edge": "B", "paired_with": "B_prime", "by": "long cylinder R"},
+    {"edge": "horizontal_L_top", "paired_with": "horizontal_L_bot", "by": "long cylinder L"},
+    {"edge": "horizontal_R_top", "paired_with": "horizontal_R_bot", "by": "long cylinder R"},
+    {"edge": "horizontal_Q_top", "paired_with": "horizontal_Q_bot", "by": "short cylinder Q"}
+  ],
+  "prym_rho": {
+    "description": "180 rotation about centre",
+    "action": "swaps long cylinders L and R; preserves short cylinder Q setwise",
+    "labels_hypothesis": "A <-> B, A' <-> B', C <-> C"
+  }
+}

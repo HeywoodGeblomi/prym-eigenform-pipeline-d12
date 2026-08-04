@@ -1,0 +1,19 @@
+{
+  "prototype": "S(w,e)",
+  "parameters": {"w": 1, "h": 1, "t": 0, "e": 2},
+  "e_alternate": -2,
+  "discriminant_formula": "D = e^2 + 8*w",
+  "D": 12,
+  "lambda_exact": "1 + sqrt(3)",
+  "lambda_numeric": 2.732050807568877,
+  "stratum": "Omega E_12(4)",
+  "genus": 3,
+  "horizontal_cylinders": {
+    "long_left": {"width": 1, "height": 1},
+    "long_right": {"width": 1, "height": 1},
+    "short_center": {"width": "lambda", "height": "lambda"},
+    "model": "A-type three-cylinder"
+  },
+  "prym_involution": "180-degree rotation about centre of S",
+  "literature": ["McMullen", "Lanneau-Nguyen", "arXiv:2210.13503 Fig 4.3"]
+}
