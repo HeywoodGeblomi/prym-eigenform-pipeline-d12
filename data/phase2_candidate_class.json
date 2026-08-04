@@ -1,0 +1,27 @@
+{
+  "phase": "Phase 2 / Track B dry-run",
+  "gate_B": "BLOCKED — geometric Gate 1 not passed",
+  "honesty_note": "Enumeration of the candidate irreducible permutation only. Not the certified geometric Rauzy class of the S-shaped surface.",
+  "class": {
+    "start_permutation": {"top": [0, 1, 2], "bot": [2, 1, 0]},
+    "n_permutations": 3,
+    "n_edges": 6,
+    "closed": true,
+    "irreducible_count": 3,
+    "permutations": [
+      {"id": 0, "top": [0, 1, 2], "bot": [2, 1, 0]},
+      {"id": 1, "top": [0, 1, 2], "bot": [2, 0, 1]},
+      {"id": 2, "top": [0, 2, 1], "bot": [2, 1, 0]}
+    ],
+    "edges": [
+      {"src": 0, "move": "top", "dst": 1, "matrix": [[1,0,0],[0,1,0],[1,0,1]]},
+      {"src": 0, "move": "bot", "dst": 2, "matrix": [[1,0,1],[0,1,0],[0,0,1]]},
+      {"src": 1, "move": "top", "dst": 0, "matrix": [[1,0,0],[0,1,0],[0,1,1]]},
+      {"src": 1, "move": "bot", "dst": 1, "matrix": [[1,0,0],[0,1,1],[0,0,1]]},
+      {"src": 2, "move": "top", "dst": 2, "matrix": [[1,0,0],[1,1,0],[0,0,1]]},
+      {"src": 2, "move": "bot", "dst": 0, "matrix": [[1,1,0],[0,1,0],[0,0,1]]}
+    ],
+    "note": "Combinatorial Rauzy class under classical top/bot moves. NOT certified geometric class unless Gate 1 passed."
+  },
+  "monoid_4d_plane_preserving": {"size": 200, "closed_at_cap": true}
+}
