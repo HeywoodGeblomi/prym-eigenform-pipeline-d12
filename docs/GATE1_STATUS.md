@@ -1,18 +1,14 @@
 # Gate 1 Status
 
-**Result: OPEN**
+**Result: OPEN (near-pass)**
 
-## Obtained (independent)
+## Valid diagrams
 
-Three Model A+ `CylinderDiagram`s in `H_3(4)` from `AbelianStratum(4).cylinder_diagrams(3)`, filtered by bot/top lengths `[1,2,2]`.
+1. `(0,2)-(0,3) (1,3)-(1,4) (4)-(2)` lengths `[1-λ, 1-λ, λ, λ, λ]`
+2. `(0,2)-(4) (1,4)-(2,3) (3)-(0,1)` lengths `[λ, 1-λ, 1-λ, λ, λ]`
 
-Preferred: `(0,2)-(1,3) (1)-(0) (3,4)-(2,4)`
+Both: stratum H_3(4), simple width λ, long widths 1, bot/top match True.
 
-- Residual-0 on LN period `(λ,0,1,0)`: ~1e-16, no projector
-- Ribbon OK with integer lengths
+Residual-0 on LN period: 0 (no projector).
 
-## Missing for PASS
-
-Algebraic separatrix lengths involving `λ=-1+√3` with holonomy on the residual-0 eigenplane.
-
-File: `geometric/gate1_model_A_plus.json`
+Still missing: full algebraic-length holonomy (ribbon API integer-only).
