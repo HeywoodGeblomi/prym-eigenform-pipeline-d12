@@ -1,0 +1,6 @@
+{
+  "means": [1.0005, 0.4214, 0.1859],
+  "exact": {"lambda1": 1, "lambda2_plus_lambda3": "3/5", "sum": "8/5"},
+  "residual0_edges": 222,
+  "total_edges": 268
+}
