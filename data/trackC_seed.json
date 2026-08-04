@@ -1,0 +1,8 @@
+{
+  "track": "C",
+  "status": "STARTED",
+  "first_object": "cross-discriminant Prym Lyapunov census",
+  "observation": "3/4 Model A± cusps sum=8/5; one outlier sum=9/5",
+  "gate1_spectrum": [1.0, 0.418, 0.182],
+  "next": "LN prototypes D\u226012; compare non-taut exponents"
+}
