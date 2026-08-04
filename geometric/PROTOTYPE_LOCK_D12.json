@@ -1,0 +1,13 @@
+{
+  "status": "LOCKED for Gate 1 construction",
+  "source": "Lanneau–Nguyen",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2},
+  "D": 12,
+  "lambda_exact": "-1 + sqrt(3)",
+  "lambda_numeric": 0.7320508075688772,
+  "T_Model_A_plus": [[-2, 0, 2, 0], [0, -2, 0, 2], [1, 0, 0, 0], [0, 1, 0, 0]],
+  "residual": "exact 0 over Q",
+  "butterfly_at_D12": {"B1": "admissible", "B_inf": "admissible", "B_q_ge_2": "not admissible"},
+  "cusps": 2,
+  "components": 1
+}
