@@ -1,0 +1,15 @@
+{
+  "method": "holonomy from CylinderDiagram + algebraic lengths/heights (no ribbon API)",
+  "diagram": "(0,2)-(4) (1,4)-(2,3) (3)-(0,1)",
+  "stratum": "H_3(4)",
+  "lengths_exact": ["\\u03bb", "1-\\u03bb", "1-\\u03bb", "\\u03bb", "\\u03bb"],
+  "lengths_numeric": [0.7320508075688772, 0.2679491924311228, 0.2679491924311228, 0.7320508075688772, 0.7320508075688772],
+  "widths": [1.0, 1.0, 0.7320508075688772],
+  "heights": [1.0, 1.0, 0.7320508075688772],
+  "sep_holonomy": [[0.7320508075688772, 0.0], [0.2679491924311228, 0.0], [0.2679491924311228, 0.0], [0.7320508075688772, 0.0], [0.7320508075688772, 0.0]],
+  "core_holonomy": [[0.0, 1.0], [0.0, 1.0], [0.0, 0.7320508075688772]],
+  "period_vector_H1_minus": [0.7320508075688772, 0.0, 1.0, 0.0],
+  "residual_T_Ap_without_projector": 3.33e-16,
+  "cylinder_width_match": true,
+  "gate1": "OPEN — holonomy constructed; geometric confirmation still pending"
+}
