@@ -1,0 +1,53 @@
+{
+  "projector_called": false,
+  "native_residual_T_period": 4.440892098500626e-16,
+  "period_vector": [0.7320508075688772, 0.0, 1.0, 0.0],
+  "lambda": 0.7320508075688772,
+  "lambda_exact": "-1+sqrt(3)",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2, "D": 12},
+  "source": "surface_dynamics AbelianStratum(4).cylinder_diagrams(3)",
+  "diagrams": [
+    {
+      "CylinderDiagram": "(0,2)-(1,3) (1)-(0) (3,4)-(2,4)",
+      "stratum": "H_3(4)",
+      "genus": 3,
+      "nseps": 5,
+      "bot_cycle_tuples": [[0, 2], [1], [3, 4]],
+      "top_cycle_tuples": [[0], [1, 3], [2, 4]],
+      "bot_lens": [1, 2, 2],
+      "top_lens": [1, 2, 2],
+      "simple_bot": [[1]],
+      "simple_top": [[0]],
+      "ribbon_integer_lengths": "OK"
+    },
+    {
+      "CylinderDiagram": "(0,2)-(0,3) (1,3)-(1,4) (4)-(2)",
+      "stratum": "H_3(4)",
+      "genus": 3,
+      "nseps": 5,
+      "bot_cycle_tuples": [[0, 2], [1, 3], [4]],
+      "top_cycle_tuples": [[0, 3], [1, 4], [2]],
+      "bot_lens": [1, 2, 2],
+      "top_lens": [1, 2, 2],
+      "simple_bot": [[4]],
+      "simple_top": [[2]],
+      "ribbon_integer_lengths": "OK"
+    },
+    {
+      "CylinderDiagram": "(0,2)-(4) (1,4)-(2,3) (3)-(0,1)",
+      "stratum": "H_3(4)",
+      "genus": 3,
+      "nseps": 5,
+      "bot_cycle_tuples": [[0, 2], [1, 4], [3]],
+      "top_cycle_tuples": [[0, 1], [2, 3], [4]],
+      "bot_lens": [1, 2, 2],
+      "top_lens": [1, 2, 2],
+      "simple_bot": [[3]],
+      "simple_top": [[4]],
+      "ribbon_integer_lengths": "OK"
+    }
+  ],
+  "gate1_ready": false,
+  "preferred_diagram": "(0,2)-(1,3) (1)-(0) (3,4)-(2,4)",
+  "gate1_status": "OPEN: independent H_3(4) Model A+ strings; residual-0; ribbon OK int lengths; algebraic holonomy pending"
+}
