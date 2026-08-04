@@ -1,0 +1,13 @@
+{
+  "gate1_diagram": "(0,2)-(4) (1,4)-(2,3) (3)-(0,1)",
+  "residual0": 0.0,
+  "spectrum_consensus": {
+    "lambda1": 1.0,
+    "lambda2": 0.42,
+    "lambda3": 0.18,
+    "sum_positive": "8/5",
+    "sum_non_tautological": "3/5"
+  },
+  "native_KZ": [1.004, 0.421, 0.181],
+  "origami_non_taut": [0.416, 0.182]
+}
