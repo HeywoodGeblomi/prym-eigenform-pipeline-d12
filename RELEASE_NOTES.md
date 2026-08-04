@@ -1,50 +1,53 @@
-# Release Notes — prym-eigenform-pipeline-d12
+# Release Notes — v0.2.0-candidate
 
-## v0.1.0 — Research Blueprint (2026-08-03)
+**Date:** 2026-08-04  
+**Status:** Research blueprint with candidate combinatorial Rauzy data  
+**(not a certified spectrum package)**
 
-Initial public release of a research pipeline for the real-multiplication structure of the discriminant-12 S-shaped Prym eigenform prototype.
+## What this release contains
 
-### What this release provides
+- Exact real-multiplication endomorphism T with residual **0**.
+- Rank-2 projector P_lambda onto the lambda=1+sqrt(3) eigenplane.
+- Corrected generators A_top_corr, A_bot_corr, S_corr (eigenplane residual ~1e-16).
+- Raw unimodular generators for the constrained integrator.
+- Candidate combinatorial Rauzy class: **3 permutations, 6 edges**.
+- Residual-0-filtered 4-D monoid: **65 matrices**.
+- benchmarks.md and **5/5 regression tests**.
 
-- Exact real-multiplication endomorphism \(T\) satisfying \(T^2 - 2T - 2I = 0\) (residual 0 in double and 50-digit precision).
-- Rank-2 projector \(P_\lambda\) onto the \(\lambda = 1+\sqrt{3}\) eigenplane (idempotent, residual 0).
-- Prototype period vector verified as an exact eigenvector.
-- Prym-compatible linear-model Rauzy generators and a 64-vertex / 120-edge graph.
-- Constrained Kontsevich–Zorich integrator that stays on the eigenplane.
-- Algebraic verification predicates (`preserves_eigenplane`, `prym_compatible`, `is_unimodular`).
-- Avila–Viana-style numerical pinching and twisting diagnostics ready for any future plane-preserving monoid.
-- High-precision (mpmath) projector and regression tests that pass.
-- Explicit documentation of the open Stage-4 combinatorial gate.
+## What this release does not contain
 
-### What this release does **not** provide
-
-- Certified Lyapunov spectra of any genuine Prym eigenform.
-- The exhaustive zippered-rectangle Rauzy class of the published S-shaped surface.
-- Interval-arithmetic long runs or a completed Eskin–Kontsevich–Zorich sum check on a genuine spectrum.
+- Certified geometric Rauzy class of the published S-shaped surface.
+- Certified Lyapunov spectra of a genuine Prym eigenform.
+- Interval-arithmetic long runs or completed EKZ on a genuine spectrum.
 - Any new theorem.
 
-### Citation policy
+Provisional numerical exponents must not be cited as Lyapunov exponents of a surface in Omega E_12.
 
-- You **may** cite the residual-0 algebraic claims (the matrix \(T\), the projector \(P_\lambda\), the eigenvector property) and the combinatorial description of the linear-model scaffold.
-- You **must not** cite any numerical Lyapunov exponents, provisional spectra, or pinching scores as results about genuine Prym eigenforms or the locus \(\Omega E_{12}\).
+## Stage-4 status
 
-### Next research step
+| Step | Status |
+|------|--------|
+| 1. Polygonal model + side identifications + rho | Advanced (geometric derivation) |
+| 2. Horizontal transversal | Done |
+| 3. Initial generalized permutation + lengths | Candidate written down |
+| 4. Rauzy induction under residual-0 filter | Executed on the candidate |
+| 5. Enumerate + algebraic filter | Candidate: 3 perms / 6 edges; monoid size 65 |
+| 6. Publish permutations + matrices | data/candidate_rauzy_class_d12.json |
 
-Replace the linear-model generators by the complete Rauzy-class permutation representation of the S-shaped three-torus / zippered-rectangle prototype, then feed the resulting matrices through the existing verification and diagnostic harnesses.
+## Citation policy
 
-### License
+- You may cite residual-0 algebraic claims and corrected-generator residuals.
+- You must not cite provisional spectra or the candidate class as certified geometric results.
 
-MIT License — see `LICENSE`.
+## License
 
-### Files of interest
+MIT. See LICENSE.
 
-| Path | Purpose |
-|------|---------|
-| `code/rm_projector.py` / `rm_projector_hp.py` | Exact and high-precision real-multiplication projector |
-| `code/verify.py` | Algebraic predicates for candidate transition matrices |
-| `code/avila_viana_checks.py` | Pinching / twisting numerical diagnostics |
-| `code/integrator.py` | Constrained KZ iteration |
-| `data/rauzy_graph_d12.json` | Linear-model Rauzy graph (64 verts, 120 edges) |
-| `tests/test_regression.py` | Regression suite (must pass) |
+## Changelog since v0.1.0
 
-Thank you for reading the limitations carefully.
+- Plane-preserving corrected generators.
+- Candidate edge pairings and generalized permutation from geometry.
+- Rauzy induction on the candidate; published class + monoid.
+- benchmarks.md.
+- Integrator default: raw unimodular generators + continuous projection.
+- Regression suite expanded to 5 tests (all passing).
