@@ -6,14 +6,16 @@
     {
       "method": "Transcribe arXiv:2210.13503 Fig 4.3",
       "outcome": "FAIL",
-      "reason": "No edge letter labels; dimension scheme assumes lambda < w which fails for (1,±2)"
+      "reason": "No edge letter labels; (w-lambda)<0 for (1,±2)"
     },
     {
-      "method": "Build S(1,±2) in sage-flatsurf",
+      "method": "Build S(1,±2) in sage-flatsurf on this host",
       "outcome": "FAIL",
-      "reason": "sage-flatsurf / surface_dynamics not installed"
+      "reason": "surface_dynamics requires SageMath; ~2GiB RAM insufficient; flatsurf not on PyPI here"
     }
   ],
+  "sage_script_provided": "geometric/sage_scripts/build_S_w1_e2.sage",
   "residual0_prototype_vector": "PASS",
-  "hypothesis_permutation_retained": {"top": [0, 1, 2], "bot": [2, 1, 0]}
+  "hypothesis_permutation_retained": {"top": [0, 1, 2], "bot": [2, 1, 0]},
+  "next": "Run sage script on external SageMath machine; commit flatsurf_export JSON; re-test Gate 1"
 }
