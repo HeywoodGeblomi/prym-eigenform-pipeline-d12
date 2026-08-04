@@ -1,0 +1,19 @@
+{
+  "status": "construction-derived — NOT flatsurf, NOT figure transcription",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2, "D": 12},
+  "lambda_exact": "-1+sqrt(3)",
+  "ordered_vertical_edges": ["V0_left_outer", "V1_C1_C0", "V2_C0_C2", "V3_right_outer"],
+  "generalized_permutation": {
+    "top": [0, 1, 2],
+    "bot": [2, 1, 0],
+    "lengths_exact": ["1", "-1+sqrt(3)", "1"]
+  },
+  "cylinder_diagram": "(0)-(2) (1)-(1) (2)-(0)",
+  "period_vector": [0.7320508075688772, 0.0, 1.0, 0.0],
+  "residual_0_without_projector": {
+    "T_Ap_period": 3.33e-16,
+    "T_Ap_minpoly": 0.0,
+    "natural_eigenvector": true
+  },
+  "gate1": "OPEN"
+}

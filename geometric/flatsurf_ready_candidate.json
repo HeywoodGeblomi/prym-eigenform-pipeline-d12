@@ -1,0 +1,12 @@
+{
+  "format": "gate1_candidate_v1",
+  "certified": false,
+  "CylinderDiagram": "(0)-(2) (1)-(1) (2)-(0)",
+  "generalized_permutation": {"top": [0, 1, 2], "bot": [2, 1, 0]},
+  "lengths_exact": ["1", "-1+sqrt(3)", "1"],
+  "holonomy_period_H1_minus": {
+    "vector": [0.7320508075688772, 0.0, 1.0, 0.0],
+    "residual_T_Ap_without_projector": 3.33e-16
+  },
+  "rho_action_on_intervals": {"0": 2, "1": 1, "2": 0}
+}
