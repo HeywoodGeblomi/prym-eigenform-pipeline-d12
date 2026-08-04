@@ -1,0 +1,18 @@
+{
+  "status": "LITERATURE-DERIVED geometric attempt — not flatsurf-certified",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": -2, "D": 12},
+  "lambda_exact": "-1+sqrt(3)",
+  "lambda_numeric": 0.7320508075688772,
+  "model": "A+",
+  "cylinder_widths": {"C1_long": 1.0, "C0_short": 0.7320508075688772, "C2_long": 1.0},
+  "T_Model_A_plus_residual": 0.0,
+  "period_vector": [0.7320508075688772, 0.0, 1.0, 0.0],
+  "period_residual": 3.33e-16,
+  "candidate_permutation_3letter": {
+    "top": [0, 1, 2],
+    "bot": [2, 1, 0],
+    "lengths_exact": ["1", "-1+sqrt(3)", "1"],
+    "status": "literature-derived hypothesis"
+  },
+  "gate1": "OPEN"
+}
