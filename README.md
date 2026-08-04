@@ -1,6 +1,6 @@
 # prym-eigenform-pipeline-d12
 
-**Research blueprint** (v0.2.0-candidate) for the real-multiplication and Rauzy structure of a linear model of the discriminant-12 S-shaped Prym eigenform prototype, plus geometrically derived **candidate** combinatorial data.
+**Research blueprint** (v0.2.0-candidate, commit `841b1c4867d820044e9cfd578e150699cde73ff5`) for the real-multiplication and Rauzy structure of a linear model of the discriminant-12 S-shaped Prym eigenform prototype, plus geometrically derived **candidate** combinatorial data.
 
 This repository does **not** contain certified Lyapunov spectra, the exhaustive zippered-rectangle Rauzy class of the published S-shaped surface, or any new theorem. All numerical exponents produced by the current integrator are provisional and must not be cited as Lyapunov exponents of a genuine Prym eigenform.
 
@@ -125,7 +125,7 @@ The combinatorial data above is a **geometrically derived candidate**, not a cer
 
 Suggested citation form:
 
-> Exact real-multiplication projector, plane-preserving generator corrections, and geometrically derived candidate Rauzy data for the discriminant-12 S-shaped prototype (residual 0). Available at https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12.
+> Exact real-multiplication projector, plane-preserving generator corrections, and geometrically derived candidate Rauzy data for the discriminant-12 S-shaped prototype (residual 0). Available at https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12 (commit `841b1c4867d820044e9cfd578e150699cde73ff5`).
 
 ## Mathematical context
 
