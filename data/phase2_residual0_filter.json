@@ -1,0 +1,11 @@
+{
+  "n_unique_matrices": 30,
+  "length_cone_pass": 30,
+  "homology_proxy_pass": 24,
+  "both_pass": 24,
+  "det_values": [1],
+  "passing_indices": [0,1,2,3,4,5,6,7,8,10,11,15,16,18,19,20,21,22,23,24,25,26,27,28],
+  "failing_indices": [9,12,13,14,17,29],
+  "rauzy_class_size": 134,
+  "gate1": "PASS"
+}
