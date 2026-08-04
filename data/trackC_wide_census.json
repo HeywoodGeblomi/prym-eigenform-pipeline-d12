@@ -1,0 +1,7 @@
+{
+  "total": 172,
+  "class_8_5": {"count": 83, "l2": [0.394, 0.434], "l3": [0.164, 0.205]},
+  "class_9_5": {"count": 89, "l2": [0.600, 0.621], "l3": [0.179, 0.200]},
+  "intruders": 0,
+  "claim": "Gate1 window exclusive to 8/5 class across 172 arithmetic H(4) surfaces"
+}

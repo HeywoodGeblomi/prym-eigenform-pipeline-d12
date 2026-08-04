@@ -1,10 +1,10 @@
 # Track C Status
 
-## Census table
+Wide census nsq=5..30: **172** surfaces.
 
-| Class | Count | λ₂ | λ₃ | Gate1 |
-|-------|-------|------|------|-------|
-| Σ=8/5 | 17 | [0.40,0.43] | [0.17,0.20] | YES |
-| Σ=9/5 | 37 | [0.60,0.63] | [0.18,0.20] | no |
+| Class | Count | λ₂ | λ₃ |
+|-------|-------|------|------|
+| Σ=8/5 | 83 | [0.394, 0.434] | [0.164, 0.205] |
+| Σ=9/5 | 89 | [0.600, 0.621] | [0.179, 0.200] |
 
-8/5 appears at every nb_squares 5–15. Evidence for D-independence within spectral class (not proof).
+**Intruders into Gate1 window: 0**
