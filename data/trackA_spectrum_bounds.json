@@ -1,0 +1,10 @@
+{
+  "exact": {"lambda1": 1, "lambda2_plus_lambda3": "3/5", "sum_positive": "8/5"},
+  "numerical_intervals": {
+    "lambda2": [0.4025, 0.4460],
+    "lambda3": [0.1612, 0.2086]
+  },
+  "means": {"lambda2": 0.4188, "lambda3": 0.1819},
+  "theorem_level": false,
+  "note": "Exact sum from origami; intervals from 20x100k native KZ + sum constraint. Not IA-certified."
+}
