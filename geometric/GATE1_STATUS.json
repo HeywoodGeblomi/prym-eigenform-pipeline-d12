@@ -1,21 +1,12 @@
 {
   "gate": 1,
-  "result": "FAIL",
-  "date": "2026-08-04",
-  "attempts": [
-    {
-      "method": "Transcribe arXiv:2210.13503 Fig 4.3",
-      "outcome": "FAIL",
-      "reason": "No edge letter labels; (w-lambda)<0 for (1,±2)"
-    },
-    {
-      "method": "Build S(1,±2) in sage-flatsurf on this host",
-      "outcome": "FAIL",
-      "reason": "surface_dynamics requires SageMath; ~2GiB RAM insufficient; flatsurf not on PyPI here"
-    }
-  ],
-  "sage_script_provided": "geometric/sage_scripts/build_S_w1_e2.sage",
-  "residual0_prototype_vector": "PASS",
-  "hypothesis_permutation_retained": {"top": [0, 1, 2], "bot": [2, 1, 0]},
-  "next": "Run sage script on external SageMath machine; commit flatsurf_export JSON; re-test Gate 1"
+  "result": "OPEN",
+  "hypothesis_starter": {
+    "top": [0, 1, 2, 3, 4],
+    "bot": [2, 0, 4, 1, 3],
+    "rauzy_class_size": 15,
+    "closed": true,
+    "irreducible": true
+  },
+  "note": "User hypothesis accepted as starter. Gate 1 not closed."
 }
