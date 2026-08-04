@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN",
+  "statement": "Across 172 arithmetic surfaces in H_3(4) with nsq = 5…30, the spectral window of Gate 1 is occupied exclusively by the Σ = 8/5 class. No surface from any other class enters that window.",
+  "total": 172,
+  "class_8_5": 83,
+  "class_9_5": 89,
+  "intruders": 0,
+  "level": "computational evidence — not a formal proof"
+}
