@@ -1,0 +1,13 @@
+{
+  "sum_distribution": {"8/5": 17, "9/5": 37},
+  "gate1_class_8_5": {
+    "lambda2_range": [0.395, 0.426],
+    "lambda3_range": [0.171, 0.198],
+    "nb_squares": [5,6,7,8,9,10,11,12,13,14,15]
+  },
+  "class_9_5": {
+    "lambda2_range": [0.599, 0.626],
+    "lambda3_range": [0.177, 0.202]
+  },
+  "evidence": "8/5 spectrum not unique to D=12; recurs across many arithmetic H(4) surfaces"
+}

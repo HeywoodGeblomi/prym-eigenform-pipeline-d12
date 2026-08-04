@@ -1,5 +1,10 @@
-# Track C — STARTED
+# Track C Status
 
-First object: cross-discriminant Prym Lyapunov census.
-Seed: 3/4 Model A± cusps share Σ=8/5; one outlier 9/5.
-Next: spectra at D≠12 vs Gate 1.
+## Census table
+
+| Class | Count | λ₂ | λ₃ | Gate1 |
+|-------|-------|------|------|-------|
+| Σ=8/5 | 17 | [0.40,0.43] | [0.17,0.20] | YES |
+| Σ=9/5 | 37 | [0.60,0.63] | [0.18,0.20] | no |
+
+8/5 appears at every nb_squares 5–15. Evidence for D-independence within spectral class (not proof).
