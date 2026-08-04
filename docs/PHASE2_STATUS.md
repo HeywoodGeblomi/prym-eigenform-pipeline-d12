@@ -1,11 +1,6 @@
 # Phase 2 Status
 
-## Combinatorial class (done)
-
-- Component: H₃(4)^odd
-- Rauzy diagram cardinality: **134**
-- Gate 1 diagram B linked (same component)
-
-## Next
-
-Residual-0 / eigenplane filter on Rauzy transition matrices for Prym D=12 subclass.
+- H₃(4)^odd Rauzy class: **134**
+- Unique labeled Rauzy matrices: **30**
+- Gate 1: PASS
+- Next: 6D→4D residual-0 eigenplane filter

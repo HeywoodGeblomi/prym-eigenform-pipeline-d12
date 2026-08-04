@@ -1,0 +1,9 @@
+{
+  "phase": 2,
+  "component": "H_3(4)^odd",
+  "class_size": 134,
+  "n_edges": 268,
+  "n_unique_matrices": 30,
+  "matrix_shape": [6, 6],
+  "status": "Labeled Rauzy matrices extracted; next map to 4D residual-0 filter"
+}
