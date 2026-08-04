@@ -1,0 +1,17 @@
+{
+  "status": "geometric source received — literature polygonal data",
+  "prototype": {"w": 1, "h": 1, "t": 0, "e": "±2"},
+  "lambda_user": "1+sqrt(3)",
+  "period_vector": [2.732050807568877, 0.0, 1.0, 0.0],
+  "period_residual_repo_T": 0.0,
+  "inferred_permutation": {
+    "top": [0, 1, 2],
+    "bot": [2, 1, 0],
+    "lengths": [1.0, 2.732050807568877, 1.0],
+    "certified": false
+  },
+  "gate1": {
+    "result": "OPEN",
+    "reason": "Ordered vertical sequence inferred from cylinder layout, not flatsurf/figure certified."
+  }
+}
