@@ -1,0 +1,25 @@
+{
+  "description": "Steps 4-6 on a geometrically motivated candidate for the D=12 S-shaped surface. Combinatorial Rauzy class of an irreducible 3-letter permutation compatible with three cylinders; 4D matrices are the residual-0-corrected generators and their monoid.",
+  "start_permutation": {"top": [0, 1, 2], "bot": [2, 1, 0]},
+  "labels": {"0": "A~A' (long cyl)", "1": "B~B' (long cyl)", "2": "C (short cyl, length 1+sqrt(3))"},
+  "lengths_exact": ["1", "1", "1+sqrt(3)"],
+  "rauzy_class_combinatorial": {
+    "n_permutations": 3,
+    "n_edges": 6,
+    "permutations": [
+      {"id": 0, "top": [0, 1, 2], "bot": [2, 1, 0]},
+      {"id": 1, "top": [0, 1, 2], "bot": [2, 0, 1]},
+      {"id": 2, "top": [0, 2, 1], "bot": [2, 1, 0]}
+    ],
+    "edges": [
+      {"src": 0, "move": "top", "dst": 1, "matrix": [[1,0,0],[0,1,0],[1,0,1]]},
+      {"src": 0, "move": "bot", "dst": 2, "matrix": [[1,0,1],[0,1,0],[0,0,1]]},
+      {"src": 1, "move": "top", "dst": 0, "matrix": [[1,0,0],[0,1,0],[0,1,1]]},
+      {"src": 1, "move": "bot", "dst": 1, "matrix": [[1,0,0],[0,1,1],[0,0,1]]},
+      {"src": 2, "move": "top", "dst": 2, "matrix": [[1,0,0],[1,1,0],[0,0,1]]},
+      {"src": 2, "move": "bot", "dst": 0, "matrix": [[1,1,0],[0,1,0],[0,0,1]]}
+    ]
+  },
+  "monoid_4d_filtered_size": 65,
+  "honesty_note": "Executed on a candidate irreducible permutation compatible with the three-cylinder + Prym geometry. Not claimed to be the certified geometric Rauzy class of the S-surface."
+}
