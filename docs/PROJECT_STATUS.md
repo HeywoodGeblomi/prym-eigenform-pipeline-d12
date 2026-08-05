@@ -5,11 +5,10 @@ Gate 1:  PASS
 Track A: FROZEN
 Track B: CLOSED
 Track C: COMPUTATIONALLY COMPLETE
-Track D: REDUCED TO A SINGLE RESEARCH THEOREM
+Track D / Path 2: OPEN — theorem target locked
+
+COMPUTATIONAL CAMPAIGN: COMPLETE (v1.0.0-computational)
 ```
 
-**Computational phase: COMPLETE.**
-
-Contributor: Heywood Geblomi
-
-Track D remaining gap: prove C_cusps / |χ| independent of D for residual-0 Model A± curves in Σ=8/5 ⊂ H₃(4)^odd (intersection theory on ΩE_D(4)).
+Path 2 theorem: \(c_{\mathrm{area}} = 18/(5\pi^2)\) independent of \(D\) on residual-0 Model A± in \(\Sigma=8/5\).
+First reduction: intersection theory on \(\Omega E_D(4)\), parallel to Nguyen (2,2).
