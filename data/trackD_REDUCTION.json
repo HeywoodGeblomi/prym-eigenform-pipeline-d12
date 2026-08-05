@@ -1,0 +1,14 @@
+{
+  "track": "D",
+  "status": "REDUCED_TO_SINGLE_THEOREM",
+  "target": "lambda2 + lambda3 = 3/5 independent of D on residual-0 Model A± in Σ=8/5 ⊂ H_3(4)^odd",
+  "proved": {
+    "moduli_all_one": true,
+    "gate1_cusp_weight": "(6-sqrt(3))/12",
+    "gate1_c_area": "18/(5*pi^2)",
+    "ekz_kappa_H4": "2/5",
+    "combinatorial_cusps_uniform": true
+  },
+  "open": "C_cusps / |chi| independent of D",
+  "parallel_reference": "Nguyen arXiv:2602.19901, arXiv:2510.23333 for Omega E_D(2,2)^odd"
+}
