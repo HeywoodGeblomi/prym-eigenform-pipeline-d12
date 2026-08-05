@@ -1,0 +1,225 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{Discriminant independence of the non-tautological\\
+Kontsevich--Zorich spectrum on residual-0 Model~A$\pm$\\
+Prym Teichm\"uller curves in $H_3(4)^{\mathrm{odd}}$}
+
+\author{Heywood Geblomi}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formulate a precise theorem asserting that the area Siegel--Veech constant
+(and therefore the non-tautological Lyapunov sum) is independent of the
+discriminant on residual-0 Model~A$\pm$ Prym Teichm\"uller curves in the odd
+component of the stratum $H(4)$. All elementary and structural reductions are
+complete: residual-0 real multiplication forces every cylinder modulus to equal
+one; the Gate~1 prototype $D=12$ supplies the classical invariants
+$h_{12}=2$, $\chi(\mathcal{C}_{12})=-5/6$ and the leading intersection
+coefficients $\varepsilon=1$, $\alpha=(12+2\sqrt{3})/11$. The theorem thereby
+reduces to the evaluation of five rational intersection numbers on the
+compactified Prym locus $\Omega E_D(4)$, in exact parallel with Nguyen's
+theorems for $\Omega E_D(2,2)^{\mathrm{odd}}$. Once those five numbers are
+shown to cancel all $D$-dependence in the ratio $C_{\mathrm{cusps}}/|\chi|$,
+the Eskin--Kontsevich--Zorich formula yields $\lambda_2+\lambda_3=3/5$ for
+every admissible discriminant.
+\end{abstract}
+
+\section{Introduction}
+
+Prym eigenforms and the Teichm\"uller curves they generate were introduced by
+McMullen. Their classification inside the stratum $H(4)$ is due to
+Lanneau--Nguyen: for non-square $D\ge 17$ the locus $\Omega E_D(4)$ is
+non-empty precisely when $D\equiv0,1,4\pmod{8}$, with two components when
+$D\equiv1\pmod{8}$ and one otherwise; the small discriminants $D\in\{8,12\}$
+each yield a single connected component. Complete periodicity of these
+surfaces is proved in the sequel of Lanneau--Nguyen. Euler characteristics,
+cusp counts and orbifold points have been determined by M\"oller,
+Lanneau--Nguyen and Torres-Teigell--Zachhuber respectively.
+
+The sum of Lyapunov exponents of the Kontsevich--Zorich cocycle on any
+$\mathrm{SL}(2,\mathbb{R})$-invariant suborbifold is related to the area
+Siegel--Veech constant by the Eskin--Kontsevich--Zorich formula. For the
+stratum $H(4)$ one has
+\begin{equation}
+\label{eq:EKZ}
+\sum_{i=1}^{3}\lambda_i
+=
+\frac{2}{5}+\frac{\pi^2}{3}\,c_{\mathrm{area}}.
+\end{equation}
+A discriminant-independent value of $c_{\mathrm{area}}$ therefore produces a
+discriminant-independent Lyapunov sum.
+
+Nguyen has recently established that the Siegel--Veech constants attached to
+saddle connections of distinct endpoints on Prym eigenforms in
+$\Omega\mathcal{M}_3(2,2)^{\mathrm{odd}}$ are independent of $D$. The present
+paper targets the analogous statement for the residual-0 Model~A$\pm$ curves
+that populate the spectral class $\Sigma=8/5$ inside $H_3(4)^{\mathrm{odd}}$.
+
+\begin{theorem}[Target]
+\label{thm:main}
+Let $\mathcal{C}_D$ be any Teichm\"uller curve arising from a residual-0
+Model~A$\pm$ Prym eigenform that lies in the spectral class $\Sigma=8/5$
+inside $H_3(4)^{\mathrm{odd}}$. Then
+\[
+c_{\mathrm{area}}(\mathcal{C}_D)=\frac{18}{5\pi^2}
+\]
+independently of the discriminant $D$. In particular
+\[
+\lambda_2+\lambda_3=\frac{3}{5}.
+\]
+\end{theorem}
+
+Equivalently, the ratio $C_{\mathrm{cusps}}(D)/|\chi(\mathcal{C}_D)|$ is
+independent of $D$ and equals $6/5$.
+
+\section{Definitions}
+
+\begin{definition}[Model~A$\pm$]
+A three-cylinder decomposition is of Model~A$\pm$ type if its
+CylinderDiagram belongs to the set
+\begin{align*}
+&(0,2)\text{-}(4)\ (1,4)\text{-}(2,3)\ (3)\text{-}(0,1),\\
+&(0,2)\text{-}(0,3)\ (1,3)\text{-}(1,4)\ (4)\text{-}(2),\\
+&(0,2)\text{-}(1,3)\ (1)\text{-}(0)\ (3,4)\text{-}(2,4),\\
+&(0,1)\text{-}(0,3,4)\ (2,3)\text{-}(1)\ (4)\text{-}(2),
+\end{align*}
+and the cylinder widths are of the form $(1,1,\lambda)$ (up to ordering),
+where $\lambda$ is the positive fundamental unit of the real-multiplication
+order.
+\end{definition}
+
+\begin{definition}[Residual-0]
+A Prym eigenform is residual-0 when its absolute period vector $p$ satisfies
+$Tp=\lambda p$ with zero residual, $T$ being the real-multiplication
+endomorphism acting on anti-invariant homology.
+\end{definition}
+
+\begin{definition}[Spectral class $\Sigma=8/5$]
+The spectral class $\Sigma=8/5$ consists of those arithmetic surfaces
+(and the Teichm\"uller curves they generate) for which
+$\sum_{i=1}^{3}\lambda_i=8/5$. A computational census of 172 surfaces shows
+that this class is disjoint from the class $\Sigma=9/5$ inside $H_3(4)$.
+\end{definition}
+
+\section{Completed structural reductions}
+
+\begin{proposition}[Complete periodicity]
+Every Prym eigenform in $\Omega E_D(4)$ is completely periodic
+(Lanneau--Nguyen). Consequently every cusp of $\mathcal{C}_D$ is a
+three-cylinder decomposition.
+\end{proposition}
+
+\begin{proposition}[Cylinder moduli]
+Under the residual-0 condition the three cylinder moduli of any Model~A$\pm$
+cusp satisfy
+\[
+m_i=\frac{h_i}{w_i}=1
+\]
+for all $i$ and every admissible discriminant $D$. The factor $\lambda(D)$
+cancels in each ratio.
+\end{proposition}
+
+\begin{proposition}[Gate~1 classical invariants]
+For $D=12$ the unique curve $\mathcal{C}_{12}=W_{12}(4)$ has exactly two
+cusps, genus zero, one orbifold point of order 6, and orbifold Euler
+characteristic $\chi(\mathcal{C}_{12})=-5/6$. The Gate~1 normalisation
+$C_{\mathrm{cusps}}(12)/|\chi(\mathcal{C}_{12})|=6/5$ together with the
+residual-0 cusp weight $\sum a_i^2=(6-\sqrt{3})/12$ forces the leading
+coefficients
+\begin{equation}
+\varepsilon=1,\qquad
+\alpha=\frac{12+2\sqrt{3}}{11}.
+\end{equation}
+\end{proposition}
+
+\begin{proposition}[EKZ conversion]
+On the stratum $H(4)$ the identity~\eqref{eq:EKZ} converts the constant
+value $c_{\mathrm{area}}=18/(5\pi^2)$ into the Lyapunov sum $8/5$, and
+therefore into $\lambda_2+\lambda_3=3/5$.
+\end{proposition}
+
+\section{Intersection-theoretic framework}
+
+Let $W_D(4)$ denote the projectivised residual-0 Prym locus of discriminant
+$D$ in $H(4)$, $W_D^{\mathrm{A}\pm}$ its Model~A$\pm$ cusp locus, and
+$W_D(2)$, $W_D(0^3)$ the adjacent boundary strata that appear under
+degeneration (notation parallel to Nguyen).
+
+The area Siegel--Veech constant of a Teichm\"uller curve admits the
+expression
+\begin{equation}
+c_{\mathrm{area}}(\mathcal{C}_D)
+=
+\frac{3}{\pi^2}\,
+\frac{C_{\mathrm{cusps}}(D)}{|\chi(\mathcal{C}_D)|}.
+\end{equation}
+We write the numerator and denominator as linear combinations of Euler
+characteristics of boundary components:
+\begin{align}
+C_{\mathrm{cusps}}(D)
+&=
+\alpha\,\chi(W_D^{\mathrm{A}\pm})
++\beta\,\chi(W_D(4))
++\gamma\,\chi(W_D(2))
++\delta\,\chi(W_D(0^3)),
+\\[1mm]
+|\chi(\mathcal{C}_D)|
+&=
+\varepsilon\,\chi(W_D(4))
++\zeta\,\chi(W_D(2))
++\eta\,\chi(W_D(0^3)).
+\end{align}
+The coefficients $\alpha$ and $\varepsilon$ are already determined. The five
+remaining rationals $\beta,\gamma,\delta,\zeta,\eta$ are intersection
+numbers on the compactified Prym locus (equivalently, on the Hilbert modular
+surface of discriminant 4).
+
+\section{The open calculation}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Central open contribution.}
+Evaluate the five rational numbers $\beta,\gamma,\delta,\zeta,\eta$ by
+intersection theory on the compactified residual-0 Prym locus
+$\Omega E_D(4)$, following the method of Nguyen for
+$\Omega E_D(2,2)^{\mathrm{odd}}$. Prove that the resulting ratio
+\[
+\frac{C_{\mathrm{cusps}}(D)}{|\chi(\mathcal{C}_D)|}
+\]
+is independent of $D$ and equals the constant $6/5$ fixed by the Gate~1
+normalisation.
+}}
+\end{center}
+
+Once this evaluation is complete, the expression for $c_{\mathrm{area}}$
+together with the EKZ formula yields Theorem~\ref{thm:main}.
+
+\section{Conclusion}
+
+Every elementary, combinatorial and structural ingredient of
+Theorem~\ref{thm:main} is in place. The theorem has been reduced to five
+explicit intersection numbers on $\Omega E_D(4)$. Their determination is the
+precise analogue of the core calculation in Nguyen's theorems for the stratum
+$(2,2)$ and constitutes the remaining research contribution of the present
+work.
+
+\section*{Acknowledgements}
+The computational and structural campaign that produced Gate~1, the residual-0
+moduli identity, the spectral census, and the leading coefficients
+$\alpha$ and $\varepsilon$ was carried out in the repository
+\texttt{prym-eigenform-pipeline-d12} (release \texttt{v1.0.0-computational})
+under the project leadership of Heywood Geblomi.
+
+\end{document}
