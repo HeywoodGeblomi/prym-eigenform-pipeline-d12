@@ -5,8 +5,7 @@ Gate 1:  PASS
 Track A: FROZEN
 Track B: CLOSED
 Track C: COMPUTATIONALLY COMPLETE
-
-PROJECT: COMPUTATIONALLY COMPLETE
+Track D: OPEN
 ```
 
-Formal proof path not opened (would be Track D).
+Track D first lever: Siegel–Veech / EKZ.
