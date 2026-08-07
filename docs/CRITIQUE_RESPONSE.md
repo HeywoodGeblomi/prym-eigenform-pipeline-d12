@@ -1,12 +1,12 @@
 # Response to the floating-point / pipeline critique
 
-## 1. Floating point → interval / ball residuals
+## 1. Floating point → rigorous residual certificates
 
 **Implemented:** `code/interval_verify.py` + `scripts/certify_residual0.py`
 
-- Minimal polynomial residual certified with `mpmath.iv` (exact integer matrix ⇒ residual interval `{0}`).
-- Eigenvector and projector idempotence certified with high-precision ball residuals (dps=60).
-- A claim is **certified** only when the residual encloses 0 at working precision.
+- Minimal polynomial residual: exact mpmath on the integer matrix (residual is the exact zero).
+- Eigenvector and projector idempotence: high-precision ball residuals (dps=60).
+- A claim is **certified** only when the residual is exactly 0 or smaller than `10^{-(dps-5)}`.
 
 ```bash
 python scripts/certify_residual0.py 12 -2
@@ -20,14 +20,14 @@ python scripts/certify_residual0.py 12 -2
 
 - `Prototype(w,h,t,e)` with `D = e² + 8wh`
 - `prototype_from_D(D)` searches simple prototypes
-- Gate-1 default `(1,1,0,-2)` still available as `GATE1`
+- Gate-1 default `(1,1,0,-2)` available as `GATE1`
 
 Data filenames `*_d12.json` remain historical artifacts of the campaign focus; the **code** path is parameterized.
 
 ## 3. Disclaimers
 
-Algebraic residual-0 claims are now certifiable via interval/ball checks.
-Lyapunov *spectra* stay labelled experimental. That split is intentional, not anxiety: the field requires it.
+Algebraic residual-0 claims are certifiable via exact/high-precision checks.
+Lyapunov *spectra* stay labelled experimental. That split is intentional: the field requires it.
 
 ## 4. Structure
 

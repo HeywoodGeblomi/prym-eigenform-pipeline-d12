@@ -16,7 +16,6 @@ import json
 import sys
 from pathlib import Path
 
-# Allow running from repo root
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from code.interval_verify import run_certification_suite
@@ -24,7 +23,7 @@ from code.prototype import GATE1, prototype_from_D
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="Interval/ball residual-0 certification")
+    p = argparse.ArgumentParser(description="Residual-0 algebraic certification")
     p.add_argument("D", nargs="?", type=int, default=None, help="discriminant")
     p.add_argument("e", nargs="?", type=int, default=None, help="prototype e")
     p.add_argument("--D", dest="D_opt", type=int, default=None)
