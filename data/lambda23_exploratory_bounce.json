@@ -1,0 +1,17 @@
+{
+  "mode": "exploratory with bounce \u2014 NOT pure Rauzy, NOT certified",
+  "n_steps": 50000,
+  "lambda2_mean": 0.46805,
+  "lambda2_std": 0.34432,
+  "lambda2_range": [0.00001, 0.96230],
+  "lambda3_mean": 0.07838,
+  "lambda3_std": 0.11636,
+  "lambda3_range": [-0.04762, 0.26318],
+  "sum23_mean": 0.55560,
+  "sum23_range": [0.00001, 1.15535],
+  "target_3_5": 0.6,
+  "trackA_reference": [1.0, 0.42, 0.18],
+  "certified_path728_reference": [1.0, 0.4817, 0.1238],
+  "promote_ready": false,
+  "engineering_finding": "Pure Dirichlet starts without bounce often trap near a cusp; spectrum collapses. Bounce restores exploration but is NOT pure Rauzy. Next: Zorich acceleration or typical init for pure paths."
+}
