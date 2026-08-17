@@ -1,0 +1,9 @@
+{
+  "method": "continuous zippered-rectangle RV section, geometric init, dynamical heights",
+  "pure_no_kick_4int": {"dirs": 0, "sum23": 0.0, "pos_sum": 0.0},
+  "pure_no_kick_5int": {"dirs": 0, "sum23": 0.0, "pos_sum": 0.0},
+  "kicked_4int_mean_sum23": 0.0,
+  "target_sum23": 0.6,
+  "promote_ready": false,
+  "finding": "Pure geometric continuous RV still one-sided; heights evolve correctly; path selection fails to sample RV measure; IET dual spectrum collapsed."
+}
