@@ -1,36 +1,24 @@
 # Individual exponents λ₂, λ₃ — technical attack
 
-**Status:** Priority 2 open.  
-**Known:** λ₂+λ₃=3/5 (Chen–Möller+EKZ). Individuals open.
+**Status:** Priority 2 open. Known: λ₂+λ₃=3/5. Individuals open.
 
-## Engineering readout
+## Option 1 — Suspension / zippered-rectangle (scaffold live)
 
-### Pure Zorich acceleration (failed to mix)
-On Diagram B and on the geometric 4-interval permutation, Zorich stacking from balanced / geometric / Dirichlet inits gives **dir_changes = 0**. Spectrum collapses (λ₂≈λ₃≈0). Acceleration alone does not escape the one-sided Rauzy chamber under projective length updates.
+Module: `code/suspension_flow.py`
 
-### Path-class ensemble (bounce, exploratory — not pure)
-Bounce when max length > 0.998 (same style as sum-certificate paths):
+- State: lengths λ, heights h, area λ·h = 1, Gate-1 Rauzy vertex
+- Return time: `-log(1 - λ_ℓ/λ_w)`
+- Height + KZ cocycle: dual `(M^{-1})^T`
 
-| quantity | value |
-|--|--|
-| λ₂ mean (15 seeds × 8·10⁴ steps) | ≈ 0.40 (std ≈ 0.25) |
-| λ₃ mean | ≈ 0.03 (std ≈ 0.09) |
-| sum23 mean | ≈ 0.45 (target 0.6) |
-| seed 728 this run | λ₂≈0.68, λ₃≈0.16 |
-| seed 728 certificate ref | λ₂≈0.48, λ₃≈0.12 |
+### Finding
+On the current Gate-1 4-interval class, dynamics fall into **one-sided cycles** (e.g. bot 0→1→3→0). Dual monodromy has eigenvalues on the **unit circle** → Lyapunov spectrum ≈ 0. Suspension bookkeeping is correct; **combinatorial mixing is missing**.
 
-QR-model radii ~1e-7; **seed-to-seed mid variance dominates**. Not certified.
+### Implication
+Architecture is ready. Physical λ₂, λ₃ need the **true geometric monodromy** of S(1,-2) (complete mixing Rauzy class or homology from cylinder/origami presentation).
 
-### Blocker for pure individual certificates
-Need one of:
-1. Suspension / zippered-rectangle Teichmüller flow (continuous heights+lengths).
-2. Path-local individuals only on explicit recorded paths (same scope as sum cert).
-3. A combinatorially mixing Rauzy component.
+## Prior findings
+- Pure discrete Rauzy / Zorich: dir_changes=0, spectrum collapsed
+- Bounce path-class: exploratory mids, high variance, not pure
+- Seed-728 path-local sum cert: still best sum signal; individuals not certified
 
-Bounce stays experimental only. `promote_ready: false`.
-
-## Artifacts
-- `data/lambda23_zorich_inits.json`
-- `data/lambda23_path_class_ensemble.json`
-- `data/lambda23_exploratory_bounce.json`
-- `scripts/lambda23_zorich_pure.py`
+`promote_ready: false`

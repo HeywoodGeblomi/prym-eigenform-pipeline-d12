@@ -1,0 +1,10 @@
+{
+  "mode": "Gate-1 suspension zippered-rectangle",
+  "pure": true,
+  "finding": "One-sided Rauzy cycles; dual monodromy unit-modulus; spectrum near 0",
+  "promote_ready": false,
+  "mean_lambda2": -0.0045,
+  "mean_lambda3": -0.0077,
+  "mean_T": 19.94,
+  "mean_dir_changes": 0
+}
