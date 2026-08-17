@@ -1,0 +1,9 @@
+{
+  "period_rank_against_omega": 2,
+  "period_rank_theorem": "Always <= 2 for a single abelian differential",
+  "intersection_form_rank": 6,
+  "prym_anti_invariant_rank": 4,
+  "naive_phi_lyap": [1, 1, 1, -1, -1, -1],
+  "promote_ready": false,
+  "diagnosis": "Period rank 2 is a theorem. Non-tautological KZ needs mixing monodromy or full H^{1,0}."
+}
