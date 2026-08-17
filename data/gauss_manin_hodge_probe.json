@@ -1,0 +1,10 @@
+{
+  "phi_plus_rho": 3.732050807568875,
+  "period_frame_rank": 2,
+  "G_metric_sum23": 0.34,
+  "eigenvalue_sum23": 0.0,
+  "random_walk_sum23_mean": 0.09,
+  "target_sum23": 0.6,
+  "promote_ready": false,
+  "finding": "Period frame of origami cylinder cores is rank-2 degenerate. Non-tautological expansion invisible. Need full polygonal H1 periods."
+}
