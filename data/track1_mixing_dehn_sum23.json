@@ -1,0 +1,9 @@
+{
+  "track": 1,
+  "best_word": [[0, 3], [3, 7], [1, 2], [4, 4]],
+  "sum23": 0.599236,
+  "pos_sum": 1.599236,
+  "lyap_normalized": [1.0, 0.599236, 0.0, 0.0, -0.599236, -1.0],
+  "finding": "sum near 0.6 but λ3=0 (degenerate). Not physical ΩE12 spectrum.",
+  "promote_ready": false
+}
