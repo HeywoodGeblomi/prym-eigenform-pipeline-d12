@@ -1,0 +1,48 @@
+name: Cleanup campaign releases and set About
+
+on:
+  push:
+    paths:
+      - ".github/cleanup-trigger"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Delete campaign releases (keep tags history optional)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          for tag in v1.1.0-theorem v1.0.0-computational; do
+            if gh release view "$tag" --repo HeywoodGeblomi/prym-eigenform-pipeline-d12 >/dev/null 2>&1; then
+              gh release delete "$tag" --repo HeywoodGeblomi/prym-eigenform-pipeline-d12 --yes || true
+              echo "Deleted release $tag"
+            else
+              echo "No release $tag"
+            fi
+          done
+          # Ensure sober release is latest
+          gh release edit v0.3.0-scaffold --repo HeywoodGeblomi/prym-eigenform-pipeline-d12 --latest || true
+
+      - name: Set repo description and topics
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/HeywoodGeblomi/prym-eigenform-pipeline-d12 -X PATCH \
+            -f description='Computational scaffold for the discriminant-12 Prym eigenform: residual-0 RM projector, geometric construction of S(1,-2), dual Rauzy evaluation' \
+            -F has_wiki=false || true
+          gh api repos/HeywoodGeblomi/prym-eigenform-pipeline-d12/topics -X PUT \
+            -H "Accept: application/vnd.github.mercy-preview+json" \
+            -f names[]=teichmuller-dynamics \
+            -f names[]=lyapunov-exponents \
+            -f names[]=kontsevich-zorich \
+            -f names[]=prym-eigenforms \
+            -f names[]=translation-surfaces \
+            -f names[]=rauzy-veech || true
