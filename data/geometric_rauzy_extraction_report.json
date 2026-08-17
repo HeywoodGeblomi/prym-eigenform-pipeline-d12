@@ -1,0 +1,11 @@
+{
+  "decision": "A \u2014 geometric Rauzy class of S(1,-2)",
+  "classes": {
+    "4interval_geometric": {"n_permutations": 12, "n_edges": 24, "strongly_connected": true},
+    "5interval_diagram_B": {"n_permutations": 33, "n_edges": 66, "strongly_connected": true}
+  },
+  "mixing_under_length_dynamics": false,
+  "deterministic_spectrum": "collapsed (~0)",
+  "promote_ready": false,
+  "blocker": "Combinatorial classes finite and SC, but projective length dynamics one-sided. Need Rauzy-Veech measure on (comb x lengths x heights) or Teichmueller geodesic monodromy on period lattice."
+}
