@@ -1,0 +1,15 @@
+{
+  "track": 1,
+  "status": "non-degenerate mixing Dehn word found",
+  "best_word": [[3,1],[4,2],[2,4],[0,3],[3,5],[0,5],[1,4],[5,2],[3,5]],
+  "sum23": 0.59783,
+  "lambda2": 0.29892,
+  "lambda3": 0.29892,
+  "pos_sum": 1.59783,
+  "both_positive": true,
+  "degenerate": false,
+  "target_sum23": 0.6,
+  "target_pos": 1.6,
+  "promote_ready": false,
+  "note": "Formal algebraic Dehn monodromy on intersection form. Both exponents > 0.1. Not yet geometric affine diffeomorphism of S(1,-2). Not a global claim."
+}
