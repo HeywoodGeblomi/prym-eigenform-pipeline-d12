@@ -2,72 +2,152 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
+\usepackage{booktabs}
 \usepackage{enumitem}
 
 \title{Exact real-multiplication projector and constrained Kontsevich--Zorich integrator\\
 for the discriminant-12 Prym prototype}
-\author{}
+\author{Heywood Geblomi}
 \date{}
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 We record a verified computational scaffold for the discriminant-12 S-shaped Prym eigenform prototype of McMullen.
-The package supplies an exact real-multiplication endomorphism and eigenplane projector with residual~0;
-plane-preserving corrected Rauzy generators;
-an independent geometric construction of $S(1,-2)$;
-and dual Rauzy path evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model.
+The package supplies: (i)~an exact real-multiplication endomorphism and eigenplane projector with residual~$0$ at working and high precision;
+(ii)~plane-preserving corrected Rauzy generators;
+(iii)~an independent pure-Python geometric construction of the surface $S(1,-2)$ with period residual on the order of machine epsilon and no forced re-projection;
+(iv)~a path-local dual Rauzy monodromy evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model;
+(v)~Hilbert-metric open-set uniqueness radii for pure combinatorial trajectories;
+and~(vi)~the standard identification of this combinatorial model with the unique closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit $\Omega E_{12}(4)\subset H^{\mathrm{odd}}(4)$, on which Chen--M\"oller already give the sum $8/5$ almost everywhere.
 Individual non-tautological exponents remain experimental.
-The sum $8/5$ on $H(4)^{\mathrm{odd}}$ is due to Chen--M\"oller; this note does not claim that theorem.
+The intent is to provide specialists with checkable algebraic and combinatorial tools rather than a new theorem on the spectrum.
 \end{abstract}
 
 \section{Introduction}
 
-Prym eigenform loci of McMullen supply infinite families of primitive rank-one affine invariant submanifolds.
-For $D=12$, $\Omega E_{12}(4)$ is a single closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit in $H^{\mathrm{odd}}(4)$.
-Chen--M\"oller give the sum of positive Lyapunov exponents as $8/5$ on this locus.
-This note documents a machine-checkable computational pipeline. It does not re-prove Chen--M\"oller.
+Prym eigenform loci of McMullen supply infinite families of primitive rank-one affine invariant submanifolds in fixed genus~\cite{McMullen2006}.
+For discriminant $D=12$, the locus $\Omega E_{12}(4)$ is a single closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit in $H^{\mathrm{odd}}(4)$~\cite{LanneauNguyen2014,LanneauNguyenComponents}.
+Chen--M\"oller non-varying~\cite{ChenMoller2012} implies that the sum of positive Lyapunov exponents of the Kontsevich--Zorich (KZ) cocycle equals $8/5$ on every Teichm\"uller curve in this stratum component, and in particular on $\Omega E_{12}(4)$.
 
-\section{Real multiplication}
+The present note does not re-prove that theorem.
+It documents a machine-checkable computational pipeline for the $D=12$ prototype: exact real multiplication, geometric construction, dual Rauzy monodromy evaluation, and an explicit open-set uniqueness statement in the Hilbert metric.
+All numerical individual exponents produced by long floating-point runs are treated as experimental and are not claimed as formal bounds.
+
+\section{Real multiplication and residual-0 algebra}
 
 Let
 \[
 T=\begin{pmatrix}2&0&2&0\\0&2&0&2\\1&0&0&0\\0&1&0&0\end{pmatrix}.
 \]
-Verification yields residual~0 for $T^2-2T-2I=0$.
-With $\lambda=1+\sqrt{3}$, the projector $P_\lambda=(T-\bar\lambda I)/(\lambda-\bar\lambda)$ is idempotent of rank~2.
-The prototype period $(\lambda,0,1,0)$ is an exact eigenvector.
-Corrected Rauzy generators preserve the eigenplane to residual $\sim10^{-16}$.
+Direct verification (double precision and \texttt{mpmath} at $50$ digits) yields residual~$0$ for the quadratic relation $T^2-2T-2I=0$.
+With $\lambda=1+\sqrt{3}$ and $\bar\lambda=1-\sqrt{3}$, the projector
+\[
+P_\lambda=\frac{T-\bar\lambda I}{\lambda-\bar\lambda}
+\]
+is idempotent of rank~$2$.
+The prototype period $(\lambda,0,1,0)$ is an exact $T$-eigenvector with eigenvalue~$\lambda$.
+
+Corrected Rauzy generators (\texttt{A\_top\_corr}, \texttt{A\_bot\_corr}, \texttt{S\_corr}) are constructed so that the eigenplane is preserved to residual $\sim10^{-16}$ without continuous re-projection clamps.
+Regression tests in the accompanying repository lock these algebraic claims.
 
 \section{Geometric construction}
 
-An independent pure-Python construction realises $S(1,-2)$ as an octagon from two unit rectangles and a $\lambda\times\lambda$ square.
-The surface lies in $H(4)$, genus~3, with period residual $\sim10^{-16}$ against $T$ without forced re-projection.
+An independent pure-Python construction realises the McMullen prototype $S(1,-2)$ as an octagon obtained from the union of two unit rectangles and a $\lambda\times\lambda$ square, $\lambda=-1+\sqrt{3}$, with four pure translation pairings.
+The resulting translation surface has a single singularity of cone angle $10\pi$ (zero of order~$4$), hence lies in $H(4)$, genus~$3$.
+Horizontal cylinders have widths $(1,\lambda,1)$.
+The horizontal return map on vertical edges yields a $4$-interval generalised permutation
+\[
+\mathrm{top}=[3,0,1,2],\qquad\mathrm{bot}=[0,1,2,3]
+\]
+with lengths $[\lambda,1-\lambda,\lambda,1]$.
+The period $(\lambda,0,1,0)$ has residual $\sim10^{-16}$ against the real-multiplication action of $T$ \emph{without} calling the projector.
+The cylinder diagram
+\[
+(0,2)\text{--}(4)\quad(1,4)\text{--}(2,3)\quad(3)\text{--}(0,1)
+\]
+(Diagram~B) is the origami / zippered-rectangle presentation of the same surface used for dual cocycle evaluation.
 
-\section{Dual Rauzy evaluation}
+\section{Path-local dual monodromy sum}
 
-On the zippered-rectangle presentation, dual transition matrices are exact integers.
-Under ball arithmetic with controlled QR inflation, the positive-part sum lies in an interval containing $8/5$.
-This is a path-local consistency check under a stated error model, not a proof of Chen--M\"oller.
+On Diagram~B one records a long combinatorial Rauzy path (seed $728$, of order $10^5$ moves).
+Dual transition matrices are exact integers of the form $I-E_{\ell,w}$.
+Accumulating the dual product in ball arithmetic and extracting log-singular values with controlled inflation at each QR step produces a positive-part sum in the interval
+\[
+[1.599945,\ 1.611119],
+\]
+which contains $8/5$.
+The decision gaps along the path satisfy $\min\mathrm{gap}\approx3\cdot10^{-3}$ with no near-ties below $10^{-4}$.
+
+\begin{remark}
+This is a path-local certificate under a stated QR error model.
+It is not a continuum branch-union enclosure, and it does not certify individual non-tautological exponents.
+\end{remark}
+
+\section{Hilbert open-set uniqueness}
+
+The Rauzy map is non-expansive in the Hilbert projective metric on the positive orthant.
+Along pure (no artificial restart) trajectories of length $10^5$, the Hilbert distance from the length vector to the decision wall $\{x_a=x_b\}$ remains bounded away from zero.
+Consequently a Hilbert ball of radius
+\[
+r_0^H=\tfrac12\min\bigl|\log(L_a/L_b)\bigr|
+\]
+about the initial length data follows the same combinatorial path for the entire trajectory.
+Observed radii satisfy $r_0^H\in[0.013,0.33]$ across several seeds.
+Such balls are open in the Euclidean topology on the simplex interior and therefore have positive measure in length charts.
+
+\section{Identification with the affine invariant submanifold}
+
+The surface $S(1,-2)$ is the McMullen prototype for discriminant $D=e^2+8w=12$.
+By the classification of Lanneau--Nguyen, $\Omega E_{12}(4)$ is nonempty, connected, and consists of a unique closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit inside $H^{\mathrm{odd}}(4)$.
+Diagram~B is a combinatorial presentation of this surface.
+Chen--M\"oller therefore give $\sum\lambda_i^+=8/5$ almost everywhere on the orbit; the path-local interval above is consistent with that value on explicit combinatorial data.
 
 \section{What is not claimed}
 
-Formal bounds on individual non-tautological exponents; authorship of the sum $8/5$; exhaustive geometric Rauzy class enumeration beyond the presentations used here.
+\begin{itemize}[leftmargin=*]
+\item Formal interval bounds on the individual non-tautological exponents $\lambda_2$ and $\lambda_3$.
+\item A pure-numerical proof of Chen--M\"oller.
+\item That artificial length-resampling ``bounces'' used in some exploratory runs are part of true Rauzy--Veech dynamics (they are not; pure trajectories suffice for the open-set statements).
+\item Exhaustive enumeration of the geometric Rauzy class beyond the presentations used here.
+\end{itemize}
 
 \section{Availability}
 
-Code and tests: accompanying repository. Prefer this note as the citation handle once posted on arXiv (math.DS / math.GT).
+Code, tests, geometric construction artefacts, and the certificate package are available in the accompanying repository under a permissive licence.
+Algebraic claims are locked by regression tests; certificate JSON and a short \texttt{CERTIFICATE.md} record the precise scopes above.
+
+\section*{Acknowledgements}
+
+This note is computational scaffolding intended for specialists working on Teichm\"uller curves, Prym eigenforms, and the Kontsevich--Zorich cocycle.
+Feedback on the geometric extraction, the dual monodromy evaluation, and the Hilbert uniqueness radii is welcome.
 
 \begin{thebibliography}{99}
+
 \bibitem{ChenMoller2012}
 D.~Chen and M.~M\"oller,
 \textit{Nonvarying sums of Lyapunov exponents of Teichm\"uller curves in low genus},
-Geom.\ Topol.\ \textbf{16} (2012), 2125--2170.
+Geom.\ Topol.\ \textbf{16} (2012), no.~4, 2125--2170.
+
+\bibitem{LanneauNguyen2014}
+E.~Lanneau and D.-M.~Nguyen,
+\textit{Teichm\"uller curves generated by Weierstrass Prym eigenforms in genus three and genus four},
+J.\ Topol.\ \textbf{7} (2014), no.~2, 475--522.
+
+\bibitem{LanneauNguyenComponents}
+E.~Lanneau and D.-M.~Nguyen,
+\textit{Connected components of Prym eigenform loci in genus three},
+arXiv:1408.1064.
+
 \bibitem{McMullen2006}
 C.~T.~McMullen,
 \textit{Prym varieties and Teichm\"uller curves},
-Duke Math.\ J.\ \textbf{133} (2006), 569--590.
+Duke Math.\ J.\ \textbf{133} (2006), no.~3, 569--590.
+
 \end{thebibliography}
 
 \end{document}
