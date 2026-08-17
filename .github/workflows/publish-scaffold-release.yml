@@ -1,0 +1,32 @@
+name: Publish scaffold release
+
+on:
+  push:
+    paths:
+      - ".github/release-trigger"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create v0.3.0-scaffold release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.3.0-scaffold
+          name: Computational scaffold for the D=12 Prym prototype
+          body: |
+            Verified residual-0 real-multiplication projector, plane-preserving generators, geometric construction of S(1,-2), constrained KZ integrator, and dual Rauzy path evaluation.
+
+            See README and certified/ for scope. Individual non-tautological Lyapunov exponents remain experimental. The sum 8/5 on H(4)^odd is due to Chen–Möller; this release does not claim that theorem.
+
+            Computational note draft: paper/computational_note_d12.tex
+          target_commitish: main
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
