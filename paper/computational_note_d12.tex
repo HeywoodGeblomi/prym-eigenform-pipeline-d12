@@ -22,8 +22,8 @@ The package supplies an exact real-multiplication endomorphism and eigenplane pr
 plane-preserving corrected Rauzy generators;
 an independent pure-Python geometric construction of the surface $S(1,-2)$ with period residual on the order of machine epsilon;
 and dual Rauzy path evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model.
-Individual non-tautological exponents remain experimental.
-The sum $8/5$ on $H(4)^{\mathrm{odd}}$ (and hence on $\Omega E_{12}(4)$) is due to Chen--M\"oller; this note does not claim that theorem.
+The individual non-tautological exponents on the Weierstrass Prym loci $\Omega E_D(4)$ (including $D=12$) are $\lambda_2=2/5$ and $\lambda_3=1/5$, due to M\"oller and to Eskin--Kontsevich--Zorich (as recorded in Eskin--Matheus); this note does not claim those values.
+The sum $8/5$ on $H(4)^{\mathrm{odd}}$ is due to Chen--M\"oller.
 The intent is checkable algebraic and combinatorial tools that specialists can reuse or audit.
 \end{abstract}
 
@@ -34,10 +34,9 @@ For discriminant $D=12$, the locus $\Omega E_{12}(4)$ is a single closed $\mathr
 Chen--M\"oller non-varying~\cite{ChenMoller2012} implies that the sum of positive Lyapunov exponents of the Kontsevich--Zorich (KZ) cocycle equals $8/5$ on every Teichm\"uller curve in this stratum component, and in particular on $\Omega E_{12}(4)$.
 Combined with the Eskin--Kontsevich--Zorich (EKZ) formula, one recovers $\lambda_2+\lambda_3=3/5$ for the non-tautological pair.
 
-The individual values of $\lambda_2$ and $\lambda_3$ on this locus are not settled by those theorems.
-A natural longer-term goal is a rigorous enclosure or theoretical determination of those individual exponents.
-The present note does not achieve that.
-It documents a machine-checkable computational pipeline for the $D=12$ prototype---exact real multiplication, geometric construction, dual Rauzy monodromy evaluation, and Hilbert open-set uniqueness---so that subsequent work on individual exponents or multi-discriminant comparisons can start from verified algebra rather than from ad hoc numerics.
+The individual values on the Weierstrass Prym loci $\Omega E_D(4)$ (including $D=12$) are known: $\lambda_2=2/5$ and $\lambda_3=1/5$, due to M\"oller and to Eskin--Kontsevich--Zorich (stated for all such curves in Eskin--Matheus, arXiv:1210.2157, \S3.2).
+This note does not re-prove those values; it records the attribution and supplies computational tools consistent with them.
+Path-local dual Rauzy evaluation on an explicit recorded path yields a positive-sum interval containing $8/5$ under a controlled QR error model; that result is path-local only and is not a global claim of the individuals.
 
 \section{Real multiplication and residual-0 algebra}
 
@@ -95,21 +94,10 @@ The decision gaps along the path satisfy $\min\mathrm{gap}\approx3\cdot10^{-3}$ 
 This is a path-local certificate under a stated QR error model.
 It is not a continuum branch-union enclosure, and it does not certify individual non-tautological exponents $\lambda_2$ and $\lambda_3$.
 It is consistent with Chen--M\"oller; it does not replace that theorem.
+Path-local mids are magnitude-consistent with the literature values $2/5$ and $1/5$; they are not a global proof of those values.
 \end{remark}
 
-\section{Hilbert open-set uniqueness}
-
-The Rauzy map is non-expansive in the Hilbert projective metric on the positive orthant.
-Along pure (no artificial restart) trajectories of length $10^5$, the Hilbert distance from the length vector to the decision wall $\{x_a=x_b\}$ remains bounded away from zero.
-Consequently a Hilbert ball of radius
-\[
-r_0^H=\tfrac12\min\bigl|\log(L_a/L_b)\bigr|
-\]
-about the initial length data follows the same combinatorial path for the entire trajectory.
-Observed radii satisfy $r_0^H\in[0.013,0.33]$ across several seeds.
-Such balls are open in the Euclidean topology on the simplex interior and therefore have positive measure in length charts.
-
-\section{What is certified versus experimental}
+\section{What is certified versus literature}
 
 \begin{center}
 \begin{tabular}{@{}ll@{}}
@@ -121,23 +109,13 @@ $P_\lambda$ idempotent, rank~$2$ & Certified \\
 Prototype period exact $T$-eigenvector & Certified \\
 Plane-preserving corrected generators & Certified ($\sim10^{-16}$) \\
 Geometric $S(1,-2)$ construction & Certified (construction + residual) \\
-Path-local dual sum interval $\ni 8/5$ & Certified under stated QR model \\
-Hilbert $r_0^H>0$ on pure trajectories & Certified (combinatorial) \\
+Path-local dual sum interval $\ni 8/5$ & Certified under stated QR model (path-local only) \\
 Identification with $\Omega E_{12}(4)$ & Literature (Lanneau--Nguyen) \\
 $\sum\lambda_i^+=8/5$ a.e.\ on the locus & Literature (Chen--M\"oller) \\
-Individual $\lambda_2$, $\lambda_3$ & Experimental only \\
+$\lambda_2=2/5$, $\lambda_3=1/5$ & Literature (M\"oller; EKZ; Eskin--Matheus) \\
 \bottomrule
 \end{tabular}
 \end{center}
-
-\section{Open direction: individual non-tautological exponents}
-
-The sum $\lambda_2+\lambda_3=3/5$ is known.
-The individual values are not.
-A natural next step is to produce rigorous interval enclosures for $\lambda_2$ and $\lambda_3$ separately, using the residual-$0$ projector and dual Rauzy machinery recorded here, together with tighter error control (e.g.\ structured interval QR, longer pure trajectories, and branch-aware length charts).
-Floating-point ensemble means from the current integrator are easy to obtain and remain provisional; they do not close the problem.
-
-An alternative of comparable scientific value is a systematic multi-discriminant census: apply the same pipeline across a range of admissible discriminants and test whether the individual non-tautological exponents appear independent of $D$.
 
 \section{Availability and reproducibility}
 
@@ -147,12 +125,12 @@ Code, regression tests, geometric construction artefacts, and certificate JSON a
 \end{center}
 under the MIT licence (tag \texttt{v0.3.0-scaffold}).
 Algebraic claims are locked by \texttt{tests/test\_regression.py}.
-Certificate scopes are recorded in \texttt{certified/CERTIFICATE.md}.
+Spectrum attribution is recorded in \texttt{docs/SPECTRUM\_ATTRIBUTION.md}.
 
 \section*{Acknowledgements}
 
 This note is computational scaffolding intended for specialists working on Teichm\"uller curves, Prym eigenforms, and the Kontsevich--Zorich cocycle.
-Feedback on the geometric extraction, the dual monodromy evaluation, and the Hilbert uniqueness radii is welcome.
+Feedback on the geometric extraction, the dual monodromy evaluation, and residual-0 algebra is welcome.
 
 \begin{thebibliography}{99}
 
@@ -160,6 +138,11 @@ Feedback on the geometric extraction, the dual monodromy evaluation, and the Hil
 D.~Chen and M.~M\"oller,
 \textit{Nonvarying sums of Lyapunov exponents of Teichm\"uller curves in low genus},
 Geom.\ Topol.\ \textbf{16} (2012), no.~4, 2125--2170.
+
+\bibitem{EskinMatheus2012}
+A.~Eskin and C.~Matheus,
+\textit{A coding-free simplicity criterion for the Lyapunov exponents of Teichm\"uller curves},
+arXiv:1210.2157.
 
 \bibitem{LanneauNguyen2014}
 E.~Lanneau and D.-M.~Nguyen,
