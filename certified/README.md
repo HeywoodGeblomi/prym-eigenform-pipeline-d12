@@ -1,5 +1,9 @@
-# Certified track (empty until gates pass)
+# Certified artefacts
 
-No certified Lyapunov spectrum or geometric Rauzy class lives here yet.
+Narrow, documented computational claims for the discriminant-12 Prym prototype.
 
-Promotion rule: an artefact may enter `certified/` only after the corresponding gate in `docs/EXECUTION_LOG.md` is marked PASS with a reproducible test or proof reference.
+See CERTIFICATE.md for scope and limits.
+
+- Residual-0 algebra is also enforced by the regression tests in tests/.
+- The sum 8/5 on H(4)^odd is due to Chen-Moller; artefacts here record consistency on explicit paths and the standard identification with Omega E_12(4).
+- Individual non-tautological Lyapunov exponents are not certified.

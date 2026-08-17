@@ -1,73 +1,33 @@
-# prym-eigenform-pipeline-d12 — Campaign Complete
+# Release notes
 
-**Tag target: `v1.1.0-theorem`**
+## Computational scaffold for the discriminant-12 Prym prototype
 
-```text
-Gate 1:  PASS
-Track A: FROZEN
-Track B: CLOSED
-Track C: COMPUTATIONALLY COMPLETE
-Path 2:  CLOSED — THEOREM PROVED
-```
+This repository provides verified algebraic and combinatorial tools for the McMullen discriminant-12 S-shaped Prym eigenform prototype, together with a constrained integrator and related diagnostics.
 
-Contributor: **Heywood Geblomi**
-Repository: https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12
+### What is provided
 
----
+1. **Exact real-multiplication structure.**
+   Endomorphism T satisfying T^2-2T-2I=0 with residual 0 (double and 50-digit checks); idempotent rank-2 projector P_lambda; prototype period as exact eigenvector.
 
-## Theorem (proved)
+2. **Plane-preserving corrected generators.**
+   Corrected Rauzy generators that preserve the eigenplane to residual ~10^{-16}.
 
-Every Teichmüller curve in $H_3(4)^{\mathrm{odd}}$ (in particular every residual-0 Model A± Prym curve of any admissible discriminant $D$) satisfies
+3. **Geometric construction of S(1,-2).**
+   Independent pure-Python octagon construction, cylinder data, and generalised permutation extracted from the horizontal return map, with period residual on the order of machine epsilon without forced re-projection.
 
-$$
-c_{\mathrm{area}} = \frac{18}{5\pi^2},\qquad \lambda_2+\lambda_3=\frac{3}{5}.
-$$
+4. **Constrained KZ integrator and dual Rauzy evaluation.**
+   Code for iterating the cocycle under algebraic constraints, and a dual Rauzy path evaluation whose positive-part sum lies in an interval containing 8/5 under a controlled QR error model (see certified/).
 
-**Proof.** Chen–Möller (Geom. Topol. 16, 2012; arXiv:1104.3932) establish that the sum of Lyapunov exponents is non-varying and equal to $8/5$ on the entire odd component of $H(4)$. The Eskin–Kontsevich–Zorich formula then forces the constant Siegel–Veech value above. See `docs/PATH2_THEOREM_PROVED.md`.
+5. **Regression tests** locking the residual-0 algebraic claims.
 
----
+### What is not claimed
 
-## Campaign record
+- A new proof of the sum of Lyapunov exponents on H(4)^odd or on Omega E_12(4). That sum is 8/5 by Chen-Moller non-varying (and is consistent with the EKZ formula). This repository records computational consistency with that known value; it does not establish the theorem.
+- Formal interval bounds on the individual non-tautological exponents lambda_2 and lambda_3. Floating-point ensemble means remain experimental.
+- An exhaustive geometric Rauzy class beyond the presentations used here.
 
-### Gate 1 — PASS
-- CylinderDiagram: `(0,2)-(4) (1,4)-(2,3) (3)-(0,1)`
-- Stratum: $H_3(4)^{\mathrm{odd}}$
-- Algebraic lengths: $[\lambda, 1-\lambda, 1-\lambda, \lambda, \lambda]$, $\lambda=-1+\sqrt{3}$
-- Residual-0: exact 0
-- Prototype: $(w,h,t,e)=(1,1,0,-2)$, $D=12$
+### Citation
 
-### Track A — FROZEN
-Exact: $\lambda_1=1$, $\lambda_2+\lambda_3=3/5$, $\Sigma=8/5$.
-Empirical 3σ (not IA-certified): $\lambda_2\in[0.403,0.433]$, $\lambda_3\in[0.167,0.197]$.
+Prefer the short computational note in paper/computational_note_d12.tex once posted on arXiv. Until then, cite specific residual-0 algebraic claims and the geometric construction as verified in the tests and artefacts under geometric/.
 
-### Track B — CLOSED
-4 Model A± cusps · Rauzy class 134 · residual-0 edges 222/268.
-
-### Track C — COMPUTATIONALLY COMPLETE
-172 arithmetic surfaces (nsq 5…30): Gate 1 spectral window occupied exclusively by the $\Sigma=8/5$ class; zero intruders.
-
-### Path 2 — THEOREM PROVED
-Chen–Möller non-varying + EKZ. The five intersection numbers are superfluous for the sum. Individual $\lambda_2,\lambda_3$ remain open.
-
----
-
-## What may be cited
-
-- Residual-0 algebraic claims
-- Gate 1 combinatorial identification
-- Exact sum identities (now theorem-level for the whole odd component)
-- Track C census (computational evidence)
-- Path 2 theorem (as corollary of Chen–Möller + EKZ)
-
-## What remains open
-
-- Individual exponents $\lambda_2$, $\lambda_3$ (separation within the sum $3/5$)
-- Interval-arithmetic certified enclosures
-
-## License
-
-MIT. Research code; use at your own risk.
-
-## Credit
-
-**Heywood Geblomi** — project lead of the computational and structural campaign; contributor to the final theorem.
+Do not cite float ensemble spectra as rigorous Lyapunov exponents of Omega E_12.

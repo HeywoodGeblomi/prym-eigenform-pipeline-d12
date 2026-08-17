@@ -1,5 +1,5 @@
 # Contributors
 
-- **Heywood Geblomi** — project lead of the computational and structural campaign; geometric source and Gate 1 criteria; contributor to the final theorem (Path 2 closed via Chen–Möller non-varying + EKZ).
+- **Heywood Geblomi** — computational implementation: residual-0 real-multiplication projector, plane-preserving generators, geometric construction of the discriminant-12 prototype, constrained integrator, dual Rauzy evaluation code, and tests.
 
-Computational pipeline developed in collaboration with the Grok research team (xAI).
+The sum of positive Lyapunov exponents on H(4)^odd (and hence on Omega E_12(4)) is due to Chen-Moller; this work does not claim authorship of that result.
