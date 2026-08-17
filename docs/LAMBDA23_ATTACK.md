@@ -1,51 +1,36 @@
 # Individual exponents λ₂, λ₃ — technical attack
 
-**Status:** Priority 2 open (user green light 2026-08-17).  
-**Goal:** Rigorous enclosures for the individual non-tautological exponents on the D=12 prototype / Diagram B dual paths.  
-**Known:** λ₂ + λ₃ = 3/5 (Chen–Möller + EKZ). λ₁ = 1 tautological.  
-**Not the goal:** float means, packaging, or “solved” claims before interval control is real.
+**Status:** Priority 2 open.  
+**Known:** λ₂+λ₃=3/5 (Chen–Möller+EKZ). Individuals open.
 
-## Milestone A — Error model & interval infrastructure
+## Engineering readout
 
-### Existing assets
-| Module | Role | Limitation |
-|--------|------|------------|
-| `code/ball_matrix.py` | Ball + BallMatrix + modified Gram–Schmidt | sqrt / QR radii crude |
-| `code/zorich_kz_ball.py` | Ball dual + Teichmüller time `-log(1-Lℓ/Lw)` | Slow; bounce optional |
-| `certified/path_local_monodromy_sum.json` | Path-local sum ∋ 8/5 | Individuals not certified |
+### Pure Zorich acceleration (failed to mix)
+On Diagram B and on the geometric 4-interval permutation, Zorich stacking from balanced / geometric / Dirichlet inits gives **dir_changes = 0**. Spectrum collapses (λ₂≈λ₃≈0). Acceleration alone does not escape the one-sided Rauzy chamber under projective length updates.
 
-### A1. Pure paths only (for certificates)
-No artificial length resampling. Reject ambiguous branches under length balls.
+### Path-class ensemble (bounce, exploratory — not pure)
+Bounce when max length > 0.998 (same style as sum-certificate paths):
 
-### A2. Error budget
-Dual exact integers; ball mul/add; modified GS QR inflation; Teichmüller time `-log(1-Lℓ/Lw)`; length normalization.
+| quantity | value |
+|--|--|
+| λ₂ mean (15 seeds × 8·10⁴ steps) | ≈ 0.40 (std ≈ 0.25) |
+| λ₃ mean | ≈ 0.03 (std ≈ 0.09) |
+| sum23 mean | ≈ 0.45 (target 0.6) |
+| seed 728 this run | λ₂≈0.68, λ₃≈0.16 |
+| seed 728 certificate ref | λ₂≈0.48, λ₃≈0.12 |
 
-### A3. QR upgrade
-Tighten pure-Python GS; optional Arb later.
+QR-model radii ~1e-7; **seed-to-seed mid variance dominates**. Not certified.
 
-## Engineering readout (2026-08-17)
+### Blocker for pure individual certificates
+Need one of:
+1. Suspension / zippered-rectangle Teichmüller flow (continuous heights+lengths).
+2. Path-local individuals only on explicit recorded paths (same scope as sum cert).
+3. A combinatorially mixing Rauzy component.
 
-### Finding 1 — Pure Dirichlet starts trap
-Random Dirichlet + pure Rauzy (no bounce), even at 2·10⁴ steps: T ≲ 15, spectrum collapses (λ₂ ≈ λ₃ ≈ 0). Path sits near a cusp.
-
-### Finding 2 — Bounce restores exploration (not pure)
-Resample when max length > 0.998: T grows, mids appear, high seed variance. **Not certifiable.**
-
-### Finding 3 — Reference path
-Seed-728 path-local (~10⁵ moves, T≈312): normalized mids [1.0, 0.4817, 0.1238, 0, −1.6055]. Sum interval ∋ 8/5 certified under QR model; individuals not.
-
-### Next (Milestone A continued)
-1. **Zorich acceleration** on pure paths (consecutive same-direction Rauzy) to escape cusps without bounce.
-2. **Typical initial lengths** (Hilbert / approximate Masur–Veech) instead of raw Dirichlet.
-3. Tighten QR only after pure paths produce stable mids.
-
-## Milestone B/C
-Ensemble of pure validated paths; first honest statement λ₂ ∈ [a,b], λ₃ ∈ [c,d] even if wide.
-
-## Non-goals
-D=14 narrative; bounce in certificates; claiming individuals solved early.
+Bounce stays experimental only. `promote_ready: false`.
 
 ## Artifacts
-- `data/lambda23_float_ensemble.json` — pure (collapsed)
-- `data/lambda23_exploratory_bounce.json` — bounce exploratory
-- `scripts/lambda23_float_ensemble.py`
+- `data/lambda23_zorich_inits.json`
+- `data/lambda23_path_class_ensemble.json`
+- `data/lambda23_exploratory_bounce.json`
+- `scripts/lambda23_zorich_pure.py`

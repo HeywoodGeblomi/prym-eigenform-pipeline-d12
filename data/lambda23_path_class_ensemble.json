@@ -1,0 +1,14 @@
+{
+  "mode": "Diagram B dual with bounce — exploratory path class",
+  "pure": false,
+  "zorich_pure_finding": "Pure Zorich yields dir_changes=0 and collapsed spectrum",
+  "n_steps": 80000,
+  "lambda2_mean": 0.40263,
+  "lambda2_std": 0.24715,
+  "lambda3_mean": 0.03455,
+  "lambda3_std": 0.09480,
+  "sum23_mean": 0.45124,
+  "target_3_5": 0.6,
+  "certified_path728_ref": {"l2": 0.4817, "l3": 0.1238},
+  "promote_ready": false
+}
