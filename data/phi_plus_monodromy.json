@@ -1,0 +1,15 @@
+{
+  "word": [["H", 0, 3], ["V", 0, 2]],
+  "det": 1.0,
+  "symplectic_error": 3.63e-14,
+  "hyperbolic": true,
+  "spectral_radius": 3.732050807568875,
+  "spectral_radius_note": "equals fundamental unit 2+sqrt(3)",
+  "lyap_normalized": [1.0, 0.0, 0.0, 0.0, 0.0, -1.0],
+  "pos_sum": 1.0,
+  "sum23": 0.0,
+  "target_pos_sum": 1.6,
+  "target_sum23": 0.6,
+  "promote_ready": false,
+  "finding": "Hyperbolic phi+ from origami Dehn words is symplectic with rho=2+sqrt(3), but normalized Lyapunov spectrum is only +/-1. sum23=0. Non-tautological exponents not recovered from this monodromy alone."
+}
