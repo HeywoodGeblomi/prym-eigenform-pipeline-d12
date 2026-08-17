@@ -1,0 +1,8 @@
+{
+  "id": "hilbert_open_set_pure_trajectories",
+  "status": "certified",
+  "claim": "Pure Rauzy trajectories on Diagram B admit positive Hilbert uniqueness radii r0_H. Rauzy is non-expansive in the Hilbert metric.",
+  "r0_H_min_across_seeds": 0.01287,
+  "seeds": [728, 56, 660, 0, 156, 707, 1142],
+  "scope": "Combinatorial path uniqueness under Hilbert balls; not a Lyapunov sum enclosure by itself."
+}

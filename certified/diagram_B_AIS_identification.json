@@ -1,0 +1,7 @@
+{
+  "id": "diagram_B_AIS_identification",
+  "status": "certified",
+  "unified_identification": "Diagram B codes the McMullen Prym eigenform S(1,-2) of discriminant 12. That surface generates the unique closed GL+(2,R)-orbit Omega E_12(4) subset H^odd(4). By Chen-Moller, the KZ positive sum equals 8/5 a.e. on that AIS.",
+  "conclusion": "Identification with Omega E_12(4); sum 8/5 is Chen-Moller.",
+  "note": "Full literature chain in docs/; this repository does not claim authorship of Chen-Moller."
+}

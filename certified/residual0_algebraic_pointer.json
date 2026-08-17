@@ -1,0 +1,6 @@
+{
+  "id": "residual0_algebraic_pointer",
+  "status": "certified",
+  "note": "Residual-0 algebraic layer (T, P_lambda, eigenvector, corrected generators). See README Verified algebraic claims, tests/, code/rm_projector.py, geometric/.",
+  "gate1": "geometric/GATE1_STATUS.json"
+}

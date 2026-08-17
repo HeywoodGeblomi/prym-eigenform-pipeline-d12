@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Exact real-multiplication projector and constrained Kontsevich--Zorich integrator\\
+for the discriminant-12 Prym prototype}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We record a verified computational scaffold for the discriminant-12 S-shaped Prym eigenform prototype of McMullen.
+The package supplies an exact real-multiplication endomorphism and eigenplane projector with residual~0;
+plane-preserving corrected Rauzy generators;
+an independent geometric construction of $S(1,-2)$;
+and dual Rauzy path evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model.
+Individual non-tautological exponents remain experimental.
+The sum $8/5$ on $H(4)^{\mathrm{odd}}$ is due to Chen--M\"oller; this note does not claim that theorem.
+\end{abstract}
+
+\section{Introduction}
+
+Prym eigenform loci of McMullen supply infinite families of primitive rank-one affine invariant submanifolds.
+For $D=12$, $\Omega E_{12}(4)$ is a single closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit in $H^{\mathrm{odd}}(4)$.
+Chen--M\"oller give the sum of positive Lyapunov exponents as $8/5$ on this locus.
+This note documents a machine-checkable computational pipeline. It does not re-prove Chen--M\"oller.
+
+\section{Real multiplication}
+
+Let
+\[
+T=\begin{pmatrix}2&0&2&0\\0&2&0&2\\1&0&0&0\\0&1&0&0\end{pmatrix}.
+\]
+Verification yields residual~0 for $T^2-2T-2I=0$.
+With $\lambda=1+\sqrt{3}$, the projector $P_\lambda=(T-\bar\lambda I)/(\lambda-\bar\lambda)$ is idempotent of rank~2.
+The prototype period $(\lambda,0,1,0)$ is an exact eigenvector.
+Corrected Rauzy generators preserve the eigenplane to residual $\sim10^{-16}$.
+
+\section{Geometric construction}
+
+An independent pure-Python construction realises $S(1,-2)$ as an octagon from two unit rectangles and a $\lambda\times\lambda$ square.
+The surface lies in $H(4)$, genus~3, with period residual $\sim10^{-16}$ against $T$ without forced re-projection.
+
+\section{Dual Rauzy evaluation}
+
+On the zippered-rectangle presentation, dual transition matrices are exact integers.
+Under ball arithmetic with controlled QR inflation, the positive-part sum lies in an interval containing $8/5$.
+This is a path-local consistency check under a stated error model, not a proof of Chen--M\"oller.
+
+\section{What is not claimed}
+
+Formal bounds on individual non-tautological exponents; authorship of the sum $8/5$; exhaustive geometric Rauzy class enumeration beyond the presentations used here.
+
+\section{Availability}
+
+Code and tests: accompanying repository. Prefer this note as the citation handle once posted on arXiv (math.DS / math.GT).
+
+\begin{thebibliography}{99}
+\bibitem{ChenMoller2012}
+D.~Chen and M.~M\"oller,
+\textit{Nonvarying sums of Lyapunov exponents of Teichm\"uller curves in low genus},
+Geom.\ Topol.\ \textbf{16} (2012), 2125--2170.
+\bibitem{McMullen2006}
+C.~T.~McMullen,
+\textit{Prym varieties and Teichm\"uller curves},
+Duke Math.\ J.\ \textbf{133} (2006), 569--590.
+\end{thebibliography}
+
+\end{document}
