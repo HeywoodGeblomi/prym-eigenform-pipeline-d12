@@ -1,0 +1,12 @@
+{
+  "track": "B",
+  "locus": "Weierstrass Prym Omega E_D(4) including D=12",
+  "lambda2": "2/5",
+  "lambda3": "1/5",
+  "sum23": "3/5",
+  "pos_sum": "8/5",
+  "spectrum": [1, "2/5", "1/5", "-1/5", "-2/5", -1],
+  "source": "Moller; EKZ; Eskin-Matheus arXiv:1210.2157 sec 3.2",
+  "promote_ready": false,
+  "claim_scope": "Literature identification only. Repo does not re-prove Moller/EKZ."
+}
