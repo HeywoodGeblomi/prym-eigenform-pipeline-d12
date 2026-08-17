@@ -5,7 +5,7 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 
-\title{Exact real-multiplication projector and constrained Kontsevich--Zorich integrator\\
+\title{Exact real-multiplication projector and constrained Kontsevich--Zorich tools\\
 for the discriminant-12 Prym prototype}
 \author{Heywood Geblomi}
 \date{}
@@ -18,25 +18,26 @@ for the discriminant-12 Prym prototype}
 
 \begin{abstract}
 We record a verified computational scaffold for the discriminant-12 S-shaped Prym eigenform prototype of McMullen.
-The package supplies: (i)~an exact real-multiplication endomorphism and eigenplane projector with residual~$0$ at working and high precision;
-(ii)~plane-preserving corrected Rauzy generators;
-(iii)~an independent pure-Python geometric construction of the surface $S(1,-2)$ with period residual on the order of machine epsilon and no forced re-projection;
-(iv)~a path-local dual Rauzy monodromy evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model;
-(v)~Hilbert-metric open-set uniqueness radii for pure combinatorial trajectories;
-and~(vi)~the standard identification of this combinatorial model with the unique closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit $\Omega E_{12}(4)\subset H^{\mathrm{odd}}(4)$, on which Chen--M\"oller already give the sum $8/5$ almost everywhere.
+The package supplies an exact real-multiplication endomorphism and eigenplane projector with residual~$0$;
+plane-preserving corrected Rauzy generators;
+an independent pure-Python geometric construction of the surface $S(1,-2)$ with period residual on the order of machine epsilon;
+and dual Rauzy path evaluation whose positive Lyapunov sum lies in an interval containing $8/5$ under a controlled QR error model.
 Individual non-tautological exponents remain experimental.
-The intent is to provide specialists with checkable algebraic and combinatorial tools rather than a new theorem on the spectrum.
+The sum $8/5$ on $H(4)^{\mathrm{odd}}$ (and hence on $\Omega E_{12}(4)$) is due to Chen--M\"oller; this note does not claim that theorem.
+The intent is checkable algebraic and combinatorial tools that specialists can reuse or audit.
 \end{abstract}
 
 \section{Introduction}
 
-Prym eigenform loci of McMullen supply infinite families of primitive rank-one affine invariant submanifolds in fixed genus~\cite{McMullen2006}.
+Prym eigenform loci of McMullen supply the only known infinite families of primitive rank-one affine invariant submanifolds in fixed genus~\cite{McMullen2006}.
 For discriminant $D=12$, the locus $\Omega E_{12}(4)$ is a single closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit in $H^{\mathrm{odd}}(4)$~\cite{LanneauNguyen2014,LanneauNguyenComponents}.
 Chen--M\"oller non-varying~\cite{ChenMoller2012} implies that the sum of positive Lyapunov exponents of the Kontsevich--Zorich (KZ) cocycle equals $8/5$ on every Teichm\"uller curve in this stratum component, and in particular on $\Omega E_{12}(4)$.
+Combined with the Eskin--Kontsevich--Zorich (EKZ) formula, one recovers $\lambda_2+\lambda_3=3/5$ for the non-tautological pair.
 
-The present note does not re-prove that theorem.
-It documents a machine-checkable computational pipeline for the $D=12$ prototype: exact real multiplication, geometric construction, dual Rauzy monodromy evaluation, and an explicit open-set uniqueness statement in the Hilbert metric.
-All numerical individual exponents produced by long floating-point runs are treated as experimental and are not claimed as formal bounds.
+The individual values of $\lambda_2$ and $\lambda_3$ on this locus are not settled by those theorems.
+A natural longer-term goal is a rigorous enclosure or theoretical determination of those individual exponents.
+The present note does not achieve that.
+It documents a machine-checkable computational pipeline for the $D=12$ prototype---exact real multiplication, geometric construction, dual Rauzy monodromy evaluation, and Hilbert open-set uniqueness---so that subsequent work on individual exponents or multi-discriminant comparisons can start from verified algebra rather than from ad hoc numerics.
 
 \section{Real multiplication and residual-0 algebra}
 
@@ -44,7 +45,7 @@ Let
 \[
 T=\begin{pmatrix}2&0&2&0\\0&2&0&2\\1&0&0&0\\0&1&0&0\end{pmatrix}.
 \]
-Direct verification (double precision and \texttt{mpmath} at $50$ digits) yields residual~$0$ for the quadratic relation $T^2-2T-2I=0$.
+Direct verification in double precision and in \texttt{mpmath} at $50$ decimal places yields residual~$0$ for the quadratic relation $T^2-2T-2I=0$.
 With $\lambda=1+\sqrt{3}$ and $\bar\lambda=1-\sqrt{3}$, the projector
 \[
 P_\lambda=\frac{T-\bar\lambda I}{\lambda-\bar\lambda}
@@ -53,9 +54,14 @@ is idempotent of rank~$2$.
 The prototype period $(\lambda,0,1,0)$ is an exact $T$-eigenvector with eigenvalue~$\lambda$.
 
 Corrected Rauzy generators (\texttt{A\_top\_corr}, \texttt{A\_bot\_corr}, \texttt{S\_corr}) are constructed so that the eigenplane is preserved to residual $\sim10^{-16}$ without continuous re-projection clamps.
-Regression tests in the accompanying repository lock these algebraic claims.
+Regression tests in the accompanying repository lock these algebraic claims under both floating-point and high-precision arithmetic.
 
-\section{Geometric construction}
+\begin{remark}
+Residual~$0$ here means that the algebraic identities hold to working precision with no detectable defect after exact rational reconstruction where applicable.
+It is an algebraic certificate for the real-multiplication structure of the linear model, not a statement about Lyapunov spectra.
+\end{remark}
+
+\section{Geometric construction of $S(1,-2)$}
 
 An independent pure-Python construction realises the McMullen prototype $S(1,-2)$ as an octagon obtained from the union of two unit rectangles and a $\lambda\times\lambda$ square, $\lambda=-1+\sqrt{3}$, with four pure translation pairings.
 The resulting translation surface has a single singularity of cone angle $10\pi$ (zero of order~$4$), hence lies in $H(4)$, genus~$3$.
@@ -65,12 +71,14 @@ The horizontal return map on vertical edges yields a $4$-interval generalised pe
 \mathrm{top}=[3,0,1,2],\qquad\mathrm{bot}=[0,1,2,3]
 \]
 with lengths $[\lambda,1-\lambda,\lambda,1]$.
-The period $(\lambda,0,1,0)$ has residual $\sim10^{-16}$ against the real-multiplication action of $T$ \emph{without} calling the projector.
+The period $(\lambda,0,1,0)$ has residual $\sim10^{-16}$ against the real-multiplication action of $T$ \emph{without} calling the projector $P_\lambda$.
+
 The cylinder diagram
 \[
 (0,2)\text{--}(4)\quad(1,4)\text{--}(2,3)\quad(3)\text{--}(0,1)
 \]
 (Diagram~B) is the origami / zippered-rectangle presentation of the same surface used for dual cocycle evaluation.
+By the classification of Lanneau--Nguyen, this surface generates the unique closed orbit $\Omega E_{12}(4)\subset H^{\mathrm{odd}}(4)$.
 
 \section{Path-local dual monodromy sum}
 
@@ -83,9 +91,10 @@ Accumulating the dual product in ball arithmetic and extracting log-singular val
 which contains $8/5$.
 The decision gaps along the path satisfy $\min\mathrm{gap}\approx3\cdot10^{-3}$ with no near-ties below $10^{-4}$.
 
-\begin{remark}
+\begin{remark}[Scope]
 This is a path-local certificate under a stated QR error model.
-It is not a continuum branch-union enclosure, and it does not certify individual non-tautological exponents.
+It is not a continuum branch-union enclosure, and it does not certify individual non-tautological exponents $\lambda_2$ and $\lambda_3$.
+It is consistent with Chen--M\"oller; it does not replace that theorem.
 \end{remark}
 
 \section{Hilbert open-set uniqueness}
@@ -100,26 +109,45 @@ about the initial length data follows the same combinatorial path for the entire
 Observed radii satisfy $r_0^H\in[0.013,0.33]$ across several seeds.
 Such balls are open in the Euclidean topology on the simplex interior and therefore have positive measure in length charts.
 
-\section{Identification with the affine invariant submanifold}
+\section{What is certified versus experimental}
 
-The surface $S(1,-2)$ is the McMullen prototype for discriminant $D=e^2+8w=12$.
-By the classification of Lanneau--Nguyen, $\Omega E_{12}(4)$ is nonempty, connected, and consists of a unique closed $\mathrm{GL}^+(2,\mathbb{R})$-orbit inside $H^{\mathrm{odd}}(4)$.
-Diagram~B is a combinatorial presentation of this surface.
-Chen--M\"oller therefore give $\sum\lambda_i^+=8/5$ almost everywhere on the orbit; the path-local interval above is consistent with that value on explicit combinatorial data.
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Claim} & \textbf{Status} \\
+\midrule
+$T^2-2T-2I=0$, residual~$0$ & Certified (algebra + tests) \\
+$P_\lambda$ idempotent, rank~$2$ & Certified \\
+Prototype period exact $T$-eigenvector & Certified \\
+Plane-preserving corrected generators & Certified ($\sim10^{-16}$) \\
+Geometric $S(1,-2)$ construction & Certified (construction + residual) \\
+Path-local dual sum interval $\ni 8/5$ & Certified under stated QR model \\
+Hilbert $r_0^H>0$ on pure trajectories & Certified (combinatorial) \\
+Identification with $\Omega E_{12}(4)$ & Literature (Lanneau--Nguyen) \\
+$\sum\lambda_i^+=8/5$ a.e.\ on the locus & Literature (Chen--M\"oller) \\
+Individual $\lambda_2$, $\lambda_3$ & Experimental only \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-\section{What is not claimed}
+\section{Open direction: individual non-tautological exponents}
 
-\begin{itemize}[leftmargin=*]
-\item Formal interval bounds on the individual non-tautological exponents $\lambda_2$ and $\lambda_3$.
-\item A pure-numerical proof of Chen--M\"oller.
-\item That artificial length-resampling ``bounces'' used in some exploratory runs are part of true Rauzy--Veech dynamics (they are not; pure trajectories suffice for the open-set statements).
-\item Exhaustive enumeration of the geometric Rauzy class beyond the presentations used here.
-\end{itemize}
+The sum $\lambda_2+\lambda_3=3/5$ is known.
+The individual values are not.
+A natural next step is to produce rigorous interval enclosures for $\lambda_2$ and $\lambda_3$ separately, using the residual-$0$ projector and dual Rauzy machinery recorded here, together with tighter error control (e.g.\ structured interval QR, longer pure trajectories, and branch-aware length charts).
+Floating-point ensemble means from the current integrator are easy to obtain and remain provisional; they do not close the problem.
 
-\section{Availability}
+An alternative of comparable scientific value is a systematic multi-discriminant census: apply the same pipeline across a range of admissible discriminants and test whether the individual non-tautological exponents appear independent of $D$.
 
-Code, tests, geometric construction artefacts, and the certificate package are available in the accompanying repository under a permissive licence.
-Algebraic claims are locked by regression tests; certificate JSON and a short \texttt{CERTIFICATE.md} record the precise scopes above.
+\section{Availability and reproducibility}
+
+Code, regression tests, geometric construction artefacts, and certificate JSON are available at
+\begin{center}
+\url{https://github.com/HeywoodGeblomi/prym-eigenform-pipeline-d12}
+\end{center}
+under the MIT licence (tag \texttt{v0.3.0-scaffold}).
+Algebraic claims are locked by \texttt{tests/test\_regression.py}.
+Certificate scopes are recorded in \texttt{certified/CERTIFICATE.md}.
 
 \section*{Acknowledgements}
 
